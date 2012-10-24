@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Octopress | Yiiwood's Blog]]></title>
+  <link href="http://yiiwood.github.com/blog/categories/octopress/atom.xml" rel="self"/>
+  <link href="http://yiiwood.github.com/"/>
+  <updated>2012-10-24T17:17:31+08:00</updated>
+  <id>http://yiiwood.github.com/</id>
+  <author>
+    <name><![CDATA[Yiiwood]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress Blog]]></title>
+    <link href="http://yiiwood.github.com/blog/2012/10/01/octopress-blog/"/>
+    <updated>2012-10-01T19:32:00+08:00</updated>
+    <id>http://yiiwood.github.com/blog/2012/10/01/octopress-blog</id>
+    <content type="html"><![CDATA[<h2 id="what-is-a-hacker">What Is a Hacker?</h2>
+<p>The Jargon File contains a bunch of definitions of the term ‘hacker’, most having to do with technical adeptness and a delight in solving problems and overcoming limits. If you want to know how to become a hacker, though, only two are really relevant.</p>
+
+<p>There is a community, a shared culture, of expert programmers and networking wizards that traces its history back through decades to the first time-sharing minicomputers and the earliest ARPAnet experiments. The members of this culture originated the term ‘hacker’. Hackers built the Internet. Hackers made the Unix operating system what it is today. Hackers run Usenet. Hackers make the World Wide Web work. If you are part of this culture, if you have contributed to it and other people in it know who you are and call you a hacker, you’re a hacker.</p>
+
+<p>The hacker mind-set is not confined to this software-hacker culture. There are people who apply the hacker attitude to other things, like electronics or music — actually, you can find it at the highest levels of any science or art. Software hackers recognize these kindred spirits elsewhere and may call them ‘hackers’ too — and some claim that the hacker nature is really independent of the particular medium the hacker works in. But in the rest of this document we will focus on the skills and attitudes of software hackers, and the traditions of the shared culture that originated the term ‘hacker’.</p>
+
+<p>There is another group of people who loudly call themselves hackers, but aren’t. These are people (mainly adolescent males) who get a kick out of breaking into computers and phreaking the phone system. Real hackers call these people ‘crackers’ and want nothing to do with them. Real hackers mostly think crackers are lazy, irresponsible, and not very bright, and object that being able to break security doesn’t make you a hacker any more than being able to hotwire cars makes you an automotive engineer. Unfortunately, many journalists and writers have been fooled into using the word ‘hacker’ to describe crackers; this irritates real hackers no end.</p>
+
+<p>The basic difference is this: hackers build things, crackers break them.</p>
+
+<p>If you want to be a hacker, keep reading. If you want to be a cracker, go read the alt.2600 newsgroup and get ready to do five to ten in the slammer after finding out you aren’t as smart as you think you are. And that’s all I’m going to say about crackers.</p>
+
+<h2 id="code">Code</h2>
+<pre><code>int main()
+{
+	int i;
+	i = 0;
+	return 0;
+}
+</code></pre>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>int main()
+</span><span class='line'>{
+</span><span class='line'>	printf(“Hello World\n”);
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>引用块</p>
+
+<blockquote>
+  <p>This is the first level of quoting.</p>
+</blockquote>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>This is nested blockquote</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+
+</blockquote>
+
+<blockquote>
+  <p>Back to the first level.</p>
+</blockquote>
+
+<h2 id="install-latex">Install Latex</h2>
+<p>首先安装<code>kramdown</code>包</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>gem install kramdown</span></code></pre></td></tr></table></div></figure></notextile></div>
+再把下面的代码添加到<code>source/_includes/custom/head.html</code>文件中:
+<div><script src='https://gist.github.com/3938526.js?file=head_add.html'></script>
+<noscript><pre><code>&lt;!-- mathjax config similar to math.stackexchange --&gt;
+
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], [&quot;\\(&quot;,&quot;\\)&quot;] ],
+      processEscapes: true
+    }
+  });
+&lt;/script&gt;
+
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+&lt;/script&gt;
+
+&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i &lt; all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot;
+   src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;</code></pre></noscript></div>
+
+修改<code>_config.yml</code>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>markdown: kramdown  #rdiscount</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h2 id="latex">Latex</h2>
+
+<script type="math/tex; mode=display">% &lt;![CDATA[
+
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+ %]]&gt;</script>
+
+<!-- more -->
+<p>Single line:$\exp(-\frac{x^2}{2})$</p>
+
+]]></content>
+  </entry>
+  
+</feed>
