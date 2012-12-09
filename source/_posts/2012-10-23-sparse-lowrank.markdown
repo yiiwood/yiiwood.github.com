@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Sparse LowRank"
+title: "Compress Sensing"
 date: 2012-10-23 18:54
 comments: true
-categories: [ Sparse, LowRank]
+categories: [ Machine Learning,Pattern Recognition,Computer Vision]
 ---
-###还没写，先放这###
+##还没写，先放这##
 
 我摘抄总结的
 [Sparse Model for Data][1]

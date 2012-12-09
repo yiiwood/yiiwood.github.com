@@ -1,31 +1,115 @@
 ---
 layout: post
-title: "Octopress Blog"
+title: "Octopress Blog 配置"
 date: 2012-10-01 19:32
 comments: true
 categories: [ Octopress ]
 ---
+##一、本地环境配置##
+1、安装[Git](http://code.google.com/p/msysgit/downloads/list)。
 
-##What Is a Hacker?##
-The Jargon File contains a bunch of definitions of the term ‘hacker’, most having to do with technical adeptness and a delight in solving problems and overcoming limits. If you want to know how to become a hacker, though, only two are really relevant.
+2、安装[Ruby](http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe)，加入环境变量。
 
-There is a community, a shared culture, of expert programmers and networking wizards that traces its history back through decades to the first time-sharing minicomputers and the earliest ARPAnet experiments. The members of this culture originated the term ‘hacker’. Hackers built the Internet. Hackers made the Unix operating system what it is today. Hackers run Usenet. Hackers make the World Wide Web work. If you are part of this culture, if you have contributed to it and other people in it know who you are and call you a hacker, you're a hacker.
+3、安装[Devkit](https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe)，首先解压，然后用如下CMD命令安装：
 
-The hacker mind-set is not confined to this software-hacker culture. There are people who apply the hacker attitude to other things, like electronics or music — actually, you can find it at the highest levels of any science or art. Software hackers recognize these kindred spirits elsewhere and may call them ‘hackers’ too — and some claim that the hacker nature is really independent of the particular medium the hacker works in. But in the rest of this document we will focus on the skills and attitudes of software hackers, and the traditions of the shared culture that originated the term ‘hacker’.
+{% codeblock %}
+cd DevKit
+ruby dk.rb init
+ruby dk.rb install
+{% endcodeblock %}
 
-There is another group of people who loudly call themselves hackers, but aren't. These are people (mainly adolescent males) who get a kick out of breaking into computers and phreaking the phone system. Real hackers call these people ‘crackers’ and want nothing to do with them. Real hackers mostly think crackers are lazy, irresponsible, and not very bright, and object that being able to break security doesn't make you a hacker any more than being able to hotwire cars makes you an automotive engineer. Unfortunately, many journalists and writers have been fooled into using the word ‘hacker’ to describe crackers; this irritates real hackers no end.
+4、安装[python](http://www.activestate.com/activepython/downloads)。
 
-The basic difference is this: hackers build things, crackers break them.
+5、下载Octopress，执行下面的git命令：
 
-If you want to be a hacker, keep reading. If you want to be a cracker, go read the alt.2600 newsgroup and get ready to do five to ten in the slammer after finding out you aren't as smart as you think you are. And that's all I'm going to say about crackers.
+{% codeblock %}
+git clone git://github.com/imathis/octopress.git  octopress
+{% endcodeblock %}
 
-##Code##
+6、加入中文UTF-8编码支持，Windows环境变量配置如下：
+
+{% codeblock %}
+LANG=zh_CN.UTF-8
+LC_ALL=zh_CN.UTF-8
+{% endcodeblock %}
+
+7、更新源，执行如下CMD命令：
+
+{% codeblock %}
+gem sources -a http://ruby.taobao.org/
+gem sources -r http://rubygems.org/
+{% endcodeblock %}
+
+8、安装Octopress，执行CMD命令：
+
+{% codeblock %}
+cd octopress
+gem install bundler
+bundle install
+{% endcodeblock %}
+
+<!-- more -->
+
+##二、建立Github项目##
+
+登录[Github](https://github.com/)，新建一个命名为 username.github.com 的Repo。
+
+##三、发布Octopress到Github##
+
+1、执行CMD命令，按照提示输入Repo地址（git@github.com:username/username.github.com）：
+
+{% codeblock %}
+cd octopress
+rake setup_github_pages
+{% endcodeblock %}
+
+2、发布，git命令（#号后面是注释）：
+
+{% codeblock %}
+rake install      #安装主题
+rake generate     #生成静态页面
+rake preview      #本地预览
+rake deploy       #发布到Github
+{% endcodeblock %}
+
+本地预览地址[http://localhost:4000/](http://localhost:4000/)。
+
+3、源文件发布到source分支下面，git命令：
+
+{% codeblock %}
+git add .
+git commit -m “your message”
+git push origin source
+{% endcodeblock %}
+
+4、更新博客后，执行`rake generate`、`rake deploy` 。
+
+##四、一些Markdown语法##
+
+1、代码块
+
+（1）在每行代码前面空Tab键：
+
+{% codeblock %}
+/*每行前空Tab*/
 	int main()
 	{
 		int i;
 		i = 0;
 		return 0;
 	}
+{% endcodeblock %}
+
+效果：
+
+	int main()
+	{
+		int i;
+		i = 0;
+		return 0;
+	}
+
+（2）用codeblock和endcodeblock作为代码块的开头和结尾，效果：
 
 {% codeblock %}
 int main()
@@ -34,32 +118,68 @@ int main()
 }
 {% endcodeblock %}
 
-引用块
+2、引用块
+
+代码：
+
+{% codeblock %}
+> This is the first level of quoting.
+>
+> > This is nested blockquote
+>
+> Back to the first level.
+{% endcodeblock %}
+
+效果：
 
 > This is the first level of quoting.
-
 >
-
 > > This is nested blockquote
-
 >
-
 > Back to the first level.
 
-##Install Latex##
-首先安装`kramdown`包
+##五、加入Latex支持##
+
+1、首先安装`kramdown`包：
 
 {% codeblock %}
 gem install kramdown
 {% endcodeblock %}
+
 再把下面的代码添加到`source/_includes/custom/head.html`文件中:
+
 {% gist 3938526   head_add.html %}
+
 修改`_config.yml`
+
 {% codeblock %}
 markdown: kramdown  #rdiscount
 {% endcodeblock %}
 
-##Latex##
+2、例子
+
+插入代码：
+
+{% codeblock %}
+$$
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+    \end{array} \right)
+  \left( \begin{array}{c}
+      y_1 \\
+      \vdots \\
+      y_n
+    \end{array} \right)
+\end{align*}
+$$
+{% endcodeblock %}
+
+效果：
 
 $$
 \begin{align*}
@@ -78,6 +198,8 @@ $$
 \end{align*}
 $$
 
-<!-- more -->
-Single line:$\exp(-\frac{x^2}{2})$
+单行代码：`$\exp(-\frac{x^2}{2})$`，效果：$\exp(-\frac{x^2}{2})$
+
+
+
 
