@@ -113,7 +113,7 @@ Sparse Model for Data ">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/10/23/sparse-lowrank/">Sparse LowRank</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/10/23/sparse-lowrank/">Compress Sensing</a></h1>
     
     
       <p class="meta">
@@ -138,7 +138,7 @@ Sparse Model for Data ">
   </header>
 
 
-  <div class="entry-content"><h3 id="section">还没写，先放这</h3>
+  <div class="entry-content"><h2 id="section">还没写，先放这</h2>
 
 <p>我摘抄总结的
 <a href="/images/Sparse Model for Data.pdf">Sparse Model for Data</a></p>
@@ -199,7 +199,7 @@ Sparse Model for Data ">
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/10/01/octopress-blog/">Octopress Blog</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/10/01/octopress-blog/">Octopress Blog 配置</a></h1>
     
     
       <p class="meta">
@@ -224,125 +224,49 @@ Sparse Model for Data ">
   </header>
 
 
-  <div class="entry-content"><h2 id="what-is-a-hacker">What Is a Hacker?</h2>
-<p>The Jargon File contains a bunch of definitions of the term ‘hacker’, most having to do with technical adeptness and a delight in solving problems and overcoming limits. If you want to know how to become a hacker, though, only two are really relevant.</p>
+  <div class="entry-content"><h2 id="section">一、本地环境配置</h2>
+<p>1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。</p>
 
-<p>There is a community, a shared culture, of expert programmers and networking wizards that traces its history back through decades to the first time-sharing minicomputers and the earliest ARPAnet experiments. The members of this culture originated the term ‘hacker’. Hackers built the Internet. Hackers made the Unix operating system what it is today. Hackers run Usenet. Hackers make the World Wide Web work. If you are part of this culture, if you have contributed to it and other people in it know who you are and call you a hacker, you’re a hacker.</p>
+<p>2、安装<a href="http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe">Ruby</a>，加入环境变量。</p>
 
-<p>The hacker mind-set is not confined to this software-hacker culture. There are people who apply the hacker attitude to other things, like electronics or music — actually, you can find it at the highest levels of any science or art. Software hackers recognize these kindred spirits elsewhere and may call them ‘hackers’ too — and some claim that the hacker nature is really independent of the particular medium the hacker works in. But in the rest of this document we will focus on the skills and attitudes of software hackers, and the traditions of the shared culture that originated the term ‘hacker’.</p>
-
-<p>There is another group of people who loudly call themselves hackers, but aren’t. These are people (mainly adolescent males) who get a kick out of breaking into computers and phreaking the phone system. Real hackers call these people ‘crackers’ and want nothing to do with them. Real hackers mostly think crackers are lazy, irresponsible, and not very bright, and object that being able to break security doesn’t make you a hacker any more than being able to hotwire cars makes you an automotive engineer. Unfortunately, many journalists and writers have been fooled into using the word ‘hacker’ to describe crackers; this irritates real hackers no end.</p>
-
-<p>The basic difference is this: hackers build things, crackers break them.</p>
-
-<p>If you want to be a hacker, keep reading. If you want to be a cracker, go read the alt.2600 newsgroup and get ready to do five to ten in the slammer after finding out you aren’t as smart as you think you are. And that’s all I’m going to say about crackers.</p>
-
-<h2 id="code">Code</h2>
-<pre><code>int main()
-{
-	int i;
-	i = 0;
-	return 0;
-}
-</code></pre>
+<p>3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 <span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">int main()
-</span><span class="line">{
-</span><span class="line">	printf("Hello World\n");
-</span><span class="line">}</span></code></pre></td></tr></table></div></figure></notextile></div>
+</pre></td><td class="code"><pre><code class=""><span class="line">cd DevKit
+</span><span class="line">ruby dk.rb init
+</span><span class="line">ruby dk.rb install</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>引用块</p>
+<p>4、安装<a href="http://www.activestate.com/activepython/downloads">python</a>。</p>
 
-<blockquote>
-  <p>This is the first level of quoting.</p>
-</blockquote>
-
-<blockquote>
-
-</blockquote>
-
-<blockquote>
-  <blockquote>
-    <p>This is nested blockquote</p>
-  </blockquote>
-</blockquote>
-
-<blockquote>
-
-</blockquote>
-
-<blockquote>
-  <p>Back to the first level.</p>
-</blockquote>
-
-<h2 id="install-latex">Install Latex</h2>
-<p>首先安装<code>kramdown</code>包</p>
+<p>5、下载Octopress，执行下面的git命令：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">gem install kramdown</span></code></pre></td></tr></table></div></figure></notextile></div>
+</pre></td><td class="code"><pre><code class=""><span class="line">git clone git://github.com/imathis/octopress.git  octopress</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>再把下面的代码添加到<code>source/_includes/custom/head.html</code>文件中:</p>
-<div><script src="https://gist.github.com/3938526.js?file=head_add.html"></script>
-<noscript><pre><code>&lt;!-- mathjax config similar to math.stackexchange --&gt;
-
-&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], [&quot;\\(&quot;,&quot;\\)&quot;] ],
-      processEscapes: true
-    }
-  });
-&lt;/script&gt;
-
-&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-&lt;/script&gt;
-
-&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i &lt; all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-&lt;/script&gt;
-
-&lt;script type=&quot;text/javascript&quot;
-   src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
-&lt;/script&gt;</code></pre></noscript></div>
-
-<p>修改<code>_config.yml</code></p>
+<p>6、加入中文UTF-8编码支持，Windows环境变量配置如下：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class=""><span class="line">markdown: kramdown  #rdiscount</span></code></pre></td></tr></table></div></figure></notextile></div>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">LANG=zh_CN.UTF-8
+</span><span class="line">LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="latex">Latex</h2>
+<p>7、更新源，执行如下CMD命令：</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">gem sources -a http://ruby.taobao.org/
+</span><span class="line">gem sources -r http://rubygems.org/</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-\begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
-    \end{array} \right)
-  \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
-      y_n
-    \end{array} \right)
-\end{align*}
- %]]></script>
+<p>8、安装Octopress，执行CMD命令：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">cd octopress
+</span><span class="line">gem install bundler
+</span><span class="line">bundle install</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 </div>
   
@@ -368,7 +292,7 @@ Sparse Model for Data ">
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/10/23/sparse-lowrank/">Sparse LowRank</a>
+        <a href="/blog/2012/10/23/sparse-lowrank/">Compress Sensing</a>
       </li>
     
       <li class="post">
@@ -376,7 +300,7 @@ Sparse Model for Data ">
       </li>
     
       <li class="post">
-        <a href="/blog/2012/10/01/octopress-blog/">Octopress Blog</a>
+        <a href="/blog/2012/10/01/octopress-blog/">Octopress Blog 配置</a>
       </li>
     
   </ul>
@@ -384,10 +308,15 @@ Sparse Model for Data ">
 <section>
   <h1>Categories</h1>
   <ul id="categories">
-    <li class='category'><a href='/blog/categories/lowrank/'>LowRank (1)</a></li>
-<li class='category'><a href='/blog/categories/machinelearning/'>MachineLearning (1)</a></li>
+    <li class='category'><a href='/blog/categories/artificial-intelligence/'>Artificial Intelligence (1)</a></li>
+<li class='category'><a href='/blog/categories/computer-vision/'>Computer Vision (2)</a></li>
+<li class='category'><a href='/blog/categories/data-mining/'>Data Mining (1)</a></li>
+<li class='category'><a href='/blog/categories/information-retrieval/'>Information Retrieval (1)</a></li>
+<li class='category'><a href='/blog/categories/machine-learning/'>Machine Learning (2)</a></li>
+<li class='category'><a href='/blog/categories/natural-language-processing/'>Natural Language Processing (1)</a></li>
 <li class='category'><a href='/blog/categories/octopress/'>Octopress (1)</a></li>
-<li class='category'><a href='/blog/categories/sparse/'>Sparse (1)</a></li>
+<li class='category'><a href='/blog/categories/pattern-recognition/'>Pattern Recognition (2)</a></li>
+<li class='category'><a href='/blog/categories/statistical-learning-theory/'>Statistical Learning Theory (1)</a></li>
 
   </ul>
 </section>

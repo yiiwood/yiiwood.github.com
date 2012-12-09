@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Pattern Recognition | Yiiwood's Blog]]></title>
+  <link href="http://yiiwood.github.com/blog/categories/pattern-recognition/atom.xml" rel="self"/>
+  <link href="http://yiiwood.github.com/"/>
+  <updated>2012-12-09T14:21:16+08:00</updated>
+  <id>http://yiiwood.github.com/</id>
+  <author>
+    <name><![CDATA[Yiiwood]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Compress Sensing]]></title>
+    <link href="http://yiiwood.github.com/blog/2012/10/23/sparse-lowrank/"/>
+    <updated>2012-10-23T18:54:00+08:00</updated>
+    <id>http://yiiwood.github.com/blog/2012/10/23/sparse-lowrank</id>
+    <content type="html"><![CDATA[<h2 id="section">还没写，先放这</h2>
+
+<p>我摘抄总结的
+<a href="/images/Sparse Model for Data.pdf">Sparse Model for Data</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ensemble Learning]]></title>
+    <link href="http://yiiwood.github.com/blog/2012/10/20/ensemble-learning/"/>
+    <updated>2012-10-20T19:33:00+08:00</updated>
+    <id>http://yiiwood.github.com/blog/2012/10/20/ensemble-learning</id>
+    <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+<p>思想起源于Valiant提出的PAC( Probably Approximately Correct)学习模型。Valiant和Kearns提出了弱学习和强学习的概念,识别错误率小于1/2,也即准确率仅比随机猜测略高的学习算法称为弱学习算法;识别准确率很高并能在多项式时间内完成的学习算法称为强学习算法。同时,Valiant和Kearns首次提出了PAC学习模型中弱学习算法和强学习算法的等价性问题,即任意给定仅比随机猜测略好的弱学习算法,是否可以将其提升为强学习算法?如果二者等价,那么只需找到一个比随机猜测略好的弱学习算法就可以将其提升为强学习算法,而不必寻找很难获得的强学习算法。</p>
+
+<!-- more -->
+
+<p>1990年,Schapire最先构造出一种多项式级的算法,对该问题做了肯定的证明,这就是最初的Boosting算法。一年后,Freund提出了一种效率更高的Boosting算法。但是,这两种算法存在共同的实践上的缺陷,那就是都要求事先知道弱学习算法学习正确的下限。1995年,Freund和schapire改进了Boosting算法,提出了AdaBoost (Adaptive Boosting)算法[5],该算法效率和Freund于1991年提出的Boosting算法几乎相同,但不需要任何关于弱学习器的先验知识,因而更容易应用到实际问题当中。之后, Freund和 schapire进一步提出了改变Boosting投票权重的AdaBoost .M1,AdaBoost .M2等算法 ,</p>
+
+<p>Bagging是Breiman提出的与Boosting相似的技术。Bagging技术的主要思想是给定一弱学习算法和一训练集。让该学习算法训练多轮，每轮的训练集由从初始的训练集中随机取出的n个训练例组成，初始训练例在某轮训练集中可以出现多次或根本不出现。训练之后可得到一个预测函数序列，最终的预测函数是对分类问题采用投票方式，对回归问题采用简单平均方法对新示例进行判别。稳定性是Bagging能否提高预测准确率的关键因素：Bagging对不稳定的学习算法能提高预测的准确度，而对稳定的学习算法效果不明显，有时甚至使预测精确度降低。学习算法的不稳定性是指如果训练集有较小的变化，学习算法产生的预测函数将发生较大变化。判定树、神经网络是不稳定的，而最近邻方法是稳定的。</p>
+
+<p>Bagging(Bootstrap Aggregating)与Boosting的区别在于Bagging的训练集的选择是随机的，各轮训练集之间相互独立，而Boosting的训练集的选择不是独立的，各轮训练集的选择与前面各轮的学习结果有关；Bagging的各个预测函数没有权重，而Boosting是有权重的；Bagging的各个预测函数可以并行生成，而Boosting的各个预测函数只能顺序生成。对于象神经网络这样极为耗时的学习方法，Bagging可通过并行训练节省大量时间开销。
+Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程度不高。</p>
+
+]]></content>
+  </entry>
+  
+</feed>

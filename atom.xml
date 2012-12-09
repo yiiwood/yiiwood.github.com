@@ -4,7 +4,7 @@
   <title><![CDATA[Yiiwood's Blog]]></title>
   <link href="http://yiiwood.github.com/atom.xml" rel="self"/>
   <link href="http://yiiwood.github.com/"/>
-  <updated>2012-10-24T20:07:44+08:00</updated>
+  <updated>2012-12-09T14:21:16+08:00</updated>
   <id>http://yiiwood.github.com/</id>
   <author>
     <name><![CDATA[Yiiwood]]></name>
@@ -14,11 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Sparse LowRank]]></title>
+    <title type="html"><![CDATA[Compress Sensing]]></title>
     <link href="http://yiiwood.github.com/blog/2012/10/23/sparse-lowrank/"/>
     <updated>2012-10-23T18:54:00+08:00</updated>
     <id>http://yiiwood.github.com/blog/2012/10/23/sparse-lowrank</id>
-    <content type="html"><![CDATA[<h3 id="section">还没写，先放这</h3>
+    <content type="html"><![CDATA[<h2 id="section">还没写，先放这</h2>
 
 <p>我摘抄总结的
 <a href="http://yiiwood.github.com/images/Sparse Model for Data.pdf">Sparse Model for Data</a></p>
@@ -47,24 +47,116 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Octopress Blog]]></title>
+    <title type="html"><![CDATA[Octopress Blog 配置]]></title>
     <link href="http://yiiwood.github.com/blog/2012/10/01/octopress-blog/"/>
     <updated>2012-10-01T19:32:00+08:00</updated>
     <id>http://yiiwood.github.com/blog/2012/10/01/octopress-blog</id>
-    <content type="html"><![CDATA[<h2 id="what-is-a-hacker">What Is a Hacker?</h2>
-<p>The Jargon File contains a bunch of definitions of the term ‘hacker’, most having to do with technical adeptness and a delight in solving problems and overcoming limits. If you want to know how to become a hacker, though, only two are really relevant.</p>
+    <content type="html"><![CDATA[<h2 id="section">一、本地环境配置</h2>
+<p>1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。</p>
 
-<p>There is a community, a shared culture, of expert programmers and networking wizards that traces its history back through decades to the first time-sharing minicomputers and the earliest ARPAnet experiments. The members of this culture originated the term ‘hacker’. Hackers built the Internet. Hackers made the Unix operating system what it is today. Hackers run Usenet. Hackers make the World Wide Web work. If you are part of this culture, if you have contributed to it and other people in it know who you are and call you a hacker, you’re a hacker.</p>
+<p>2、安装<a href="http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe">Ruby</a>，加入环境变量。</p>
 
-<p>The hacker mind-set is not confined to this software-hacker culture. There are people who apply the hacker attitude to other things, like electronics or music — actually, you can find it at the highest levels of any science or art. Software hackers recognize these kindred spirits elsewhere and may call them ‘hackers’ too — and some claim that the hacker nature is really independent of the particular medium the hacker works in. But in the rest of this document we will focus on the skills and attitudes of software hackers, and the traditions of the shared culture that originated the term ‘hacker’.</p>
+<p>3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：</p>
 
-<p>There is another group of people who loudly call themselves hackers, but aren’t. These are people (mainly adolescent males) who get a kick out of breaking into computers and phreaking the phone system. Real hackers call these people ‘crackers’ and want nothing to do with them. Real hackers mostly think crackers are lazy, irresponsible, and not very bright, and object that being able to break security doesn’t make you a hacker any more than being able to hotwire cars makes you an automotive engineer. Unfortunately, many journalists and writers have been fooled into using the word ‘hacker’ to describe crackers; this irritates real hackers no end.</p>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">cd DevKit
+</span><span class="line">ruby dk.rb init
+</span><span class="line">ruby dk.rb install</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>The basic difference is this: hackers build things, crackers break them.</p>
+<p>4、安装<a href="http://www.activestate.com/activepython/downloads">python</a>。</p>
 
-<p>If you want to be a hacker, keep reading. If you want to be a cracker, go read the alt.2600 newsgroup and get ready to do five to ten in the slammer after finding out you aren’t as smart as you think you are. And that’s all I’m going to say about crackers.</p>
+<p>5、下载Octopress，执行下面的git命令：</p>
 
-<h2 id="code">Code</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">git clone git://github.com/imathis/octopress.git  octopress</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>6、加入中文UTF-8编码支持，Windows环境变量配置如下：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">LANG=zh_CN.UTF-8
+</span><span class="line">LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>7、更新源，执行如下CMD命令：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">gem sources -a http://ruby.taobao.org/
+</span><span class="line">gem sources -r http://rubygems.org/</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>8、安装Octopress，执行CMD命令：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">cd octopress
+</span><span class="line">gem install bundler
+</span><span class="line">bundle install</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<!-- more -->
+
+<h2 id="github">二、建立Github项目</h2>
+
+<p>登录<a href="https://github.com/">Github</a>，新建一个命名为 username.github.com 的Repo。</p>
+
+<h2 id="octopressgithub">三、发布Octopress到Github</h2>
+
+<p>1、执行CMD命令，按照提示输入Repo地址（git@github.com:username/username.github.com）：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">cd octopress
+</span><span class="line">rake setup_github_pages</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>2、发布，git命令（#号后面是注释）：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">rake install      #安装主题
+</span><span class="line">rake generate     #生成静态页面
+</span><span class="line">rake preview      #本地预览
+</span><span class="line">rake deploy       #发布到Github</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>本地预览地址<a href="http://localhost:4000/">http://localhost:4000/</a>。</p>
+
+<p>3、源文件发布到source分支下面，git命令：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">git add .
+</span><span class="line">git commit -m “your message”
+</span><span class="line">git push origin source</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>4、更新博客后，执行<code>rake generate</code>、<code>rake deploy</code> 。</p>
+
+<h2 id="markdown">四、一些Markdown语法</h2>
+
+<p>1、代码块</p>
+
+<p>（1）在每行代码前面空Tab键：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">/*每行前空Tab*/
+</span><span class="line">	int main()
+</span><span class="line">	{
+</span><span class="line">		int i;
+</span><span class="line">		i = 0;
+</span><span class="line">		return 0;
+</span><span class="line">	}</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>效果：</p>
+
 <pre><code>int main()
 {
 	int i;
@@ -72,6 +164,8 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 	return 0;
 }
 </code></pre>
+
+<p>（2）用codeblock和endcodeblock作为代码块的开头和结尾，效果：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -82,37 +176,42 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 </span><span class="line">	printf("Hello World\n");
 </span><span class="line">}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>引用块</p>
+<p>2、引用块</p>
+
+<p>代码：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">&gt; This is the first level of quoting.
+</span><span class="line">&gt;
+</span><span class="line">&gt; &gt; This is nested blockquote
+</span><span class="line">&gt;
+</span><span class="line">&gt; Back to the first level.</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>效果：</p>
 
 <blockquote>
   <p>This is the first level of quoting.</p>
-</blockquote>
 
-<blockquote>
-
-</blockquote>
-
-<blockquote>
   <blockquote>
     <p>This is nested blockquote</p>
   </blockquote>
-</blockquote>
 
-<blockquote>
-
-</blockquote>
-
-<blockquote>
   <p>Back to the first level.</p>
 </blockquote>
 
-<h2 id="install-latex">Install Latex</h2>
-<p>首先安装<code>kramdown</code>包</p>
+<h2 id="latex">五、加入Latex支持</h2>
+
+<p>1、首先安装<code>kramdown</code>包：</p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">gem install kramdown</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>再把下面的代码添加到<code>source/_includes/custom/head.html</code>文件中:</p>
+
 <div><script src="https://gist.github.com/3938526.js?file=head_add.html"></script>
 <noscript><pre><code>&lt;!-- mathjax config similar to math.stackexchange --&gt;
 
@@ -151,7 +250,44 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">markdown: kramdown  #rdiscount</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<h2 id="latex">Latex</h2>
+<p>2、例子</p>
+
+<p>插入代码：</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">$$
+</span><span class="line">\begin{align*}
+</span><span class="line">  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+</span><span class="line">  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+</span><span class="line">  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+</span><span class="line">      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) \\
+</span><span class="line">      \vdots &amp; \ddots &amp; \vdots \\
+</span><span class="line">      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
+</span><span class="line">    \end{array} \right)
+</span><span class="line">  \left( \begin{array}{c}
+</span><span class="line">      y_1 \\
+</span><span class="line">      \vdots \\
+</span><span class="line">      y_n
+</span><span class="line">    \end{array} \right)
+</span><span class="line">\end{align*}
+</span><span class="line">$$</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>效果：</p>
 
 <script type="math/tex; mode=display">% &lt;![CDATA[
 
@@ -171,8 +307,7 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 \end{align*}
  %]]&gt;</script>
 
-<!-- more -->
-<p>Single line:$\exp(-\frac{x^2}{2})$</p>
+<p>单行代码：<code>$\exp(-\frac{x^2}{2})$</code>，效果：$\exp(-\frac{x^2}{2})$</p>
 
 ]]></content>
   </entry>
