@@ -6,11 +6,12 @@ comments: true
 categories: [ Pattern Recognition,Computer Vision]
 ---
 
+----------
+
 ## 图像分类的一般框架 ##
 图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。
 
 ![classification-framework](../images/Image-Representation-For-Classification/image-classification-framework.png)
-
 
 
 通常图像特征分为全局特征和局部特征，全局特征需要在整幅图像中计算，常用的有全局颜色直方图、功率谱、PHOG等；局部特征计算方式和全局特征方法相反，它首先将图像划分成图像块，再对各个小图像块计算其特征表示，常用的局部特征有GIST、SIFT、SURF、MSER 等。在应用中，由于局部特征鲁棒性好、能够应对多种变换等，因此在分类与识别领域扮演着重要角色。
@@ -86,7 +87,13 @@ categories: [ Pattern Recognition,Computer Vision]
 
 ----------
 
-当用非线性SVM(LibSVM库)时，核函数的类型有线性核(Linear)、多项式核(Polynomial)、径向基函数核(RBF)和S型核(Sigmoid)，非线性SVM只对ScSPM方法进行了实验，结果如下：
+当用非线性SVM(LibSVM库)时，核函数的类型有线性核(Linear)、多项式核(Polynomial)、径向基函数核(RBF)和S型核(Sigmoid)，分别为：  
+*  Linear：$u \times v $
+*  Polynomial：$(gamma \times u \times v)^{degree} $
+*  RBF：$\exp^{( -gamma \times \abs{u-v}^{2})} $
+*  Sigmoid：$tanh(gamma \times u \times v + coef) $
+
+非线性SVM只对ScSPM方法进行了实验，结果如下：
 
 ![classification-framework](../images/Image-Representation-For-Classification/Kernel-ScSPM-Tr.png)
 
