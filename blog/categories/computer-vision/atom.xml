@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Computer Vision | Yiiwood's Blog]]></title>
   <link href="http://yiiwood.github.com/blog/categories/computer-vision/atom.xml" rel="self"/>
   <link href="http://yiiwood.github.com/"/>
-  <updated>2013-03-07T20:19:51+08:00</updated>
+  <updated>2013-03-07T20:48:54+08:00</updated>
   <id>http://yiiwood.github.com/</id>
   <author>
     <name><![CDATA[Yiiwood]]></name>
@@ -18,7 +18,9 @@
     <link href="http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification/"/>
     <updated>2012-11-23T20:31:00+08:00</updated>
     <id>http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification</id>
-    <content type="html"><![CDATA[<h2 id="section">图像分类的一般框架</h2>
+    <content type="html"><![CDATA[<hr />
+
+<h2 id="section">图像分类的一般框架</h2>
 <p>图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。</p>
 
 <p><img src="../images/Image-Representation-For-Classification/image-classification-framework.png" alt="classification-framework" /></p>
@@ -102,7 +104,13 @@
 
 <hr />
 
-<p>当用非线性SVM(LibSVM库)时，核函数的类型有线性核(Linear)、多项式核(Polynomial)、径向基函数核(RBF)和S型核(Sigmoid)，非线性SVM只对ScSPM方法进行了实验，结果如下：</p>
+<p>当用非线性SVM(LibSVM库)时，核函数的类型有线性核(Linear)、多项式核(Polynomial)、径向基函数核(RBF)和S型核(Sigmoid)，分别为：<br />
+*  Linear：$u \times v $
+*  Polynomial：$(gamma \times u \times v)^{degree} $
+*  RBF：$\exp^{( -gamma \times \abs{u-v}^{2})} $
+*  Sigmoid：$tanh(gamma \times u \times v + coef) $</p>
+
+<p>非线性SVM只对ScSPM方法进行了实验，结果如下：</p>
 
 <p><img src="../images/Image-Representation-For-Classification/Kernel-ScSPM-Tr.png" alt="classification-framework" /></p>
 
@@ -135,7 +143,9 @@
     <link href="http://yiiwood.github.com/blog/2012/10/23/sparse-lowrank/"/>
     <updated>2012-10-23T18:54:00+08:00</updated>
     <id>http://yiiwood.github.com/blog/2012/10/23/sparse-lowrank</id>
-    <content type="html"><![CDATA[<h2 id="section">还没写，先放这</h2>
+    <content type="html"><![CDATA[<hr />
+
+<h2 id="section">还没写，先放这</h2>
 
 <p>我摘抄总结的
 <a href="/images/Sparse Model for Data.pdf">Sparse Model for Data</a></p>
@@ -148,8 +158,9 @@
     <link href="http://yiiwood.github.com/blog/2012/10/20/ensemble-learning/"/>
     <updated>2012-10-20T19:33:00+08:00</updated>
     <id>http://yiiwood.github.com/blog/2012/10/20/ensemble-learning</id>
-    <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
-<p>思想起源于Valiant提出的PAC( Probably Approximately Correct)学习模型。Valiant和Kearns提出了弱学习和强学习的概念,识别错误率小于1/2,也即准确率仅比随机猜测略高的学习算法称为弱学习算法;识别准确率很高并能在多项式时间内完成的学习算法称为强学习算法。同时,Valiant和Kearns首次提出了PAC学习模型中弱学习算法和强学习算法的等价性问题,即任意给定仅比随机猜测略好的弱学习算法,是否可以将其提升为强学习算法?如果二者等价,那么只需找到一个比随机猜测略好的弱学习算法就可以将其提升为强学习算法,而不必寻找很难获得的强学习算法。</p>
+    <content type="html"><![CDATA[<hr />
+<p>##Introduction##
+思想起源于Valiant提出的PAC( Probably Approximately Correct)学习模型。Valiant和Kearns提出了弱学习和强学习的概念,识别错误率小于1/2,也即准确率仅比随机猜测略高的学习算法称为弱学习算法;识别准确率很高并能在多项式时间内完成的学习算法称为强学习算法。同时,Valiant和Kearns首次提出了PAC学习模型中弱学习算法和强学习算法的等价性问题,即任意给定仅比随机猜测略好的弱学习算法,是否可以将其提升为强学习算法?如果二者等价,那么只需找到一个比随机猜测略好的弱学习算法就可以将其提升为强学习算法,而不必寻找很难获得的强学习算法。</p>
 
 <!-- more -->
 
@@ -159,6 +170,35 @@
 
 <p>Bagging(Bootstrap Aggregating)与Boosting的区别在于Bagging的训练集的选择是随机的，各轮训练集之间相互独立，而Boosting的训练集的选择不是独立的，各轮训练集的选择与前面各轮的学习结果有关；Bagging的各个预测函数没有权重，而Boosting是有权重的；Bagging的各个预测函数可以并行生成，而Boosting的各个预测函数只能顺序生成。对于象神经网络这样极为耗时的学习方法，Bagging可通过并行训练节省大量时间开销。
 Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程度不高。</p>
+
+<script type="math/tex; mode=display">
+\begin{algorithm}[H]
+\renewcommand{\thealgorithm}{2.1}
+\caption{The Pseudocode of Adaboost}\label{alg:alg1}
+\KwIn{\mathcal{S}=\left(  \left(x_1, y_1\right),\ldots, \left(x_n, y_n\right) \right)}
+\KwOut{Strong Classifier H}
+	\BlankLine
+	\For{$i = 1$ \KwTo $n$}{
+		$D_1(i) \ = \ \frac{1}{n}$
+	}
+	\For{$t = 1$ \KwTo $T$}{
+		
+		$h_t$ \ = \ base classifier in $\mathcal{H}$ with small error $ \epsilon_t = Pr_{i \sim D_t } \left[ h_t(x_i) \neq y_i \right]$
+			
+		$\alpha_t$ \ = \ $\frac{1}{2} \log \frac{1 - \epsilon_t}{ \epsilon_t } $
+		
+		$Z_t$ \ = \ 2 $\left[ \epsilon_t(1 - \epsilon_t) \right]$  normalization factor
+		
+		\For{$ i = 1$ \KwTo $n$} {
+		
+			$D_{t+1}(i)$ \ = \ $\frac{D_t(i)\exp( -\alpha_t y_i h_t(x_i)  )}{Z_t}$
+		}
+		
+	}
+	\Return $H \ = \ sign(\sum_{t=1}^T \alpha_t h_t ) $
+	
+\end{algorithm}
+</script>
 
 ]]></content>
   </entry>

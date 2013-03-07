@@ -9,7 +9,7 @@
   <meta name="author" content="Yiiwood">
 
   
-  <meta name="description" content="一、本地环境配置
+  <meta name="description" content="##一、本地环境配置##
 1、安装Git。
 2、安装Ruby，加入环境变量。
 3、安装Devkit，首先解压，然后用如下CMD命令安装： 1
@@ -143,8 +143,9 @@ ruby dk.rb install 4、安装python。
   </header>
 
 
-<div class="entry-content"><h2 id="section">一、本地环境配置</h2>
-<p>1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。<br />
+<div class="entry-content"><hr />
+<p>##一、本地环境配置##
+1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。<br />
 2、安装<a href="http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe">Ruby</a>，加入环境变量。<br />
 3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：  </p>
 
@@ -244,13 +245,15 @@ ruby dk.rb install 4、安装python。
 </span><span class="line">		return 0;
 </span><span class="line">	}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>效果：<br />
-	int main()
-	{
-		int i;
-		i = 0;
-		return 0;
-	}</p>
+<p>效果：  </p>
+
+<pre><code>int main()
+{
+	int i;
+	i = 0;
+	return 0;
+}
+</code></pre>
 
 <p>（2）用codeblock和endcodeblock作为代码块的开头和结尾，效果：  </p>
 
@@ -278,12 +281,17 @@ ruby dk.rb install 4、安装python。
 </span><span class="line">&gt;
 </span><span class="line">&gt; Back to the first level.</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>效果：<br />
-&gt; This is the first level of quoting.
-&gt;
-&gt; &gt; This is nested blockquote
-&gt;
-&gt; Back to the first level.</p>
+<p>效果：  </p>
+
+<blockquote>
+  <p>This is the first level of quoting.</p>
+
+  <blockquote>
+    <p>This is nested blockquote</p>
+  </blockquote>
+
+  <p>Back to the first level.</p>
+</blockquote>
 
 <h2 id="latex">五、加入Latex支持</h2>
 
@@ -368,23 +376,25 @@ ruby dk.rb install 4、安装python。
 </span><span class="line">\end{align*}
 </span><span class="line">$$</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>效果：<br />
-$$
-\begin{align<em>}
-  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = <br />
-  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) <br />
-      \vdots &amp; \ddots &amp; \vdots <br />
-      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
+<p>效果：  </p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+
+\begin{align*}
+  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
+  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
+      \vdots & \ddots & \vdots \\
+      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
     \end{array} \right)
   \left( \begin{array}{c}
-      y_1 <br />
-      \vdots <br />
+      y_1 \\
+      \vdots \\
       y_n
     \end{array} \right)
-\end{align</em>}
-$$</p>
+\end{align*}
+ %]]></script>
 
 <p>单行代码：<code>$\exp(-\frac{x^2}{2})$</code>，效果：$\exp(-\frac{x^2}{2})$</p>
 

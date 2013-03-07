@@ -135,7 +135,9 @@
   </header>
 
 
-<div class="entry-content"><h2 id="section">图像分类的一般框架</h2>
+<div class="entry-content"><hr />
+
+<h2 id="section">图像分类的一般框架</h2>
 <p>图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。</p>
 
 <p><img src="../images/Image-Representation-For-Classification/image-classification-framework.png" alt="classification-framework" /></p>
@@ -219,7 +221,13 @@
 
 <hr />
 
-<p>当用非线性SVM(LibSVM库)时，核函数的类型有线性核(Linear)、多项式核(Polynomial)、径向基函数核(RBF)和S型核(Sigmoid)，非线性SVM只对ScSPM方法进行了实验，结果如下：</p>
+<p>当用非线性SVM(LibSVM库)时，核函数的类型有线性核(Linear)、多项式核(Polynomial)、径向基函数核(RBF)和S型核(Sigmoid)，分别为：<br />
+*  Linear：$u \times v $
+*  Polynomial：$(gamma \times u \times v)^{degree} $
+*  RBF：$\exp^{( -gamma \times \abs{u-v}^{2})} $
+*  Sigmoid：$tanh(gamma \times u \times v + coef) $</p>
+
+<p>非线性SVM只对ScSPM方法进行了实验，结果如下：</p>
 
 <p><img src="../images/Image-Representation-For-Classification/Kernel-ScSPM-Tr.png" alt="classification-framework" /></p>
 

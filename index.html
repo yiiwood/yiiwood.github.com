@@ -138,7 +138,9 @@
   </header>
 
 
-  <div class="entry-content"><h2 id="section">图像分类的一般框架</h2>
+  <div class="entry-content"><hr />
+
+<h2 id="section">图像分类的一般框架</h2>
 <p>图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。</p>
 
 <p><img src="../images/Image-Representation-For-Classification/image-classification-framework.png" alt="classification-framework" /></p>
@@ -222,7 +224,13 @@
 
 <hr />
 
-<p>当用非线性SVM(LibSVM库)时，核函数的类型有线性核(Linear)、多项式核(Polynomial)、径向基函数核(RBF)和S型核(Sigmoid)，非线性SVM只对ScSPM方法进行了实验，结果如下：</p>
+<p>当用非线性SVM(LibSVM库)时，核函数的类型有线性核(Linear)、多项式核(Polynomial)、径向基函数核(RBF)和S型核(Sigmoid)，分别为：<br />
+*  Linear：$u \times v $
+*  Polynomial：$(gamma \times u \times v)^{degree} $
+*  RBF：$\exp^{( -gamma \times \abs{u-v}^{2})} $
+*  Sigmoid：$tanh(gamma \times u \times v + coef) $</p>
+
+<p>非线性SVM只对ScSPM方法进行了实验，结果如下：</p>
 
 <p><img src="../images/Image-Representation-For-Classification/Kernel-ScSPM-Tr.png" alt="classification-framework" /></p>
 
@@ -275,7 +283,9 @@
   </header>
 
 
-  <div class="entry-content"><h2 id="section">还没写，先放这</h2>
+  <div class="entry-content"><hr />
+
+<h2 id="section">还没写，先放这</h2>
 
 <p>我摘抄总结的
 <a href="/images/Sparse Model for Data.pdf">Sparse Model for Data</a></p>
@@ -317,8 +327,9 @@
   </header>
 
 
-  <div class="entry-content"><h2 id="introduction">Introduction</h2>
-<p>思想起源于Valiant提出的PAC( Probably Approximately Correct)学习模型。Valiant和Kearns提出了弱学习和强学习的概念,识别错误率小于1/2,也即准确率仅比随机猜测略高的学习算法称为弱学习算法;识别准确率很高并能在多项式时间内完成的学习算法称为强学习算法。同时,Valiant和Kearns首次提出了PAC学习模型中弱学习算法和强学习算法的等价性问题,即任意给定仅比随机猜测略好的弱学习算法,是否可以将其提升为强学习算法?如果二者等价,那么只需找到一个比随机猜测略好的弱学习算法就可以将其提升为强学习算法,而不必寻找很难获得的强学习算法。</p>
+  <div class="entry-content"><hr />
+<p>##Introduction##
+思想起源于Valiant提出的PAC( Probably Approximately Correct)学习模型。Valiant和Kearns提出了弱学习和强学习的概念,识别错误率小于1/2,也即准确率仅比随机猜测略高的学习算法称为弱学习算法;识别准确率很高并能在多项式时间内完成的学习算法称为强学习算法。同时,Valiant和Kearns首次提出了PAC学习模型中弱学习算法和强学习算法的等价性问题,即任意给定仅比随机猜测略好的弱学习算法,是否可以将其提升为强学习算法?如果二者等价,那么只需找到一个比随机猜测略好的弱学习算法就可以将其提升为强学习算法,而不必寻找很难获得的强学习算法。</p>
 
 </div>
   
@@ -361,8 +372,9 @@
   </header>
 
 
-  <div class="entry-content"><h2 id="section">一、本地环境配置</h2>
-<p>1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。<br />
+  <div class="entry-content"><hr />
+<p>##一、本地环境配置##
+1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。<br />
 2、安装<a href="http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe">Ruby</a>，加入环境变量。<br />
 3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：  </p>
 
