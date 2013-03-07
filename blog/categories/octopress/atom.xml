@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Yiiwood's Blog]]></title>
   <link href="http://yiiwood.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://yiiwood.github.com/"/>
-  <updated>2013-03-07T19:20:22+08:00</updated>
+  <updated>2013-03-07T19:55:07+08:00</updated>
   <id>http://yiiwood.github.com/</id>
   <author>
     <name><![CDATA[Yiiwood]]></name>
@@ -19,22 +19,19 @@
     <updated>2012-10-01T19:32:00+08:00</updated>
     <id>http://yiiwood.github.com/blog/2012/10/01/octopress-blog</id>
     <content type="html"><![CDATA[<h2 id="section">一、本地环境配置</h2>
-<p>1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。</p>
-
-<p>2、安装<a href="http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe">Ruby</a>，加入环境变量。</p>
-
-<p>3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：</p>
+<p>1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。<br />
+2、安装<a href="http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe">Ruby</a>，加入环境变量。<br />
+3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>cd DevKit
 </span><span class='line'>ruby dk.rb init
-</span><span class='line'>ruby dk.rb install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>ruby dk.rb install</span></code></pre></td></tr></table></div></figure></notextile></div>  </p>
 
-<p>4、安装<a href="http://www.activestate.com/activepython/downloads">python</a>。</p>
-
-<p>5、下载Octopress，执行下面的git命令：</p>
+<p>4、安装<a href="http://www.activestate.com/activepython/downloads">python</a>。<br />
+5、下载Octopress，执行下面的git命令：  </p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/imathis/octopress.git  octopress</span></code></pre></td></tr></table></div></figure></notextile></div></p>
