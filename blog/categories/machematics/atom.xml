@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Data Mining | Yiiwood's Blog]]></title>
-  <link href="http://yiiwood.github.com/blog/categories/data-mining/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Machematics | Yiiwood's Blog]]></title>
+  <link href="http://yiiwood.github.com/blog/categories/machematics/atom.xml" rel="self"/>
   <link href="http://yiiwood.github.com/"/>
   <updated>2013-03-07T19:19:23+08:00</updated>
   <id>http://yiiwood.github.com/</id>

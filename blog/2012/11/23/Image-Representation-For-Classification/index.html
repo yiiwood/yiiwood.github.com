@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>用于分类的几种图像表示模型 - Yiiwood's Blog</title>
+  <meta name="author" content="Yiiwood">
+
+  
+  <meta name="description" content="图像分类的一般框架
+图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。 通常图像特征分为全局特征和局部特征，全局特征需要在整幅图像中计算，常用的有全局颜色直方图、功率谱、PHOG等； &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Yiiwood's Blog" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35823032-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Yiiwood's Blog</a></h1>
+  
+    <h2>自强不息，厚德载物</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yiiwood.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">用于分类的几种图像表示模型</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-23T20:31:00+08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2 id="section">图像分类的一般框架</h2>
+<p>图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。</p>
+
+<p><img src="../images/Image-Representation-For-Classification/image-classification-framework.png" alt="classification-framework" /></p>
+
+<!-- more -->
+
+<p>通常图像特征分为全局特征和局部特征，全局特征需要在整幅图像中计算，常用的有全局颜色直方图、功率谱、PHOG等；局部特征计算方式和全局特征方法相反，它首先将图像划分成图像块，再对各个小图像块计算其特征表示，常用的局部特征有GIST、SIFT、SURF、MSER 等。在应用中，由于局部特征鲁棒性好、能够应对多种变换等，因此在分类与识别领域扮演着重要角色。</p>
+
+<p>图像表示是指组织图像特征表达整幅图像或图中目标，当用局部特征表示图像时，由于每幅图像会有很多局部特征，这样特征之间的组织关系就变得十分重要，良好的组织关系使得图像表示更具区分性，并且能捕捉图中目标的结构信息，为后续的分类打好基础。当前比较有代表性的方法包括特征袋（BOW）方法和空间金字塔匹配方法。其中空间金字塔匹配方法又包括基本空间金字塔匹配(Spatial Pyramid Matching, SPM)法、稀疏编码空间金字塔匹配(Sparse coding SPM, ScSPM)法和局部性约束线性编码(Locality-constrained Linear Coding, LLC)空间金字塔匹配法。这几类表示模型也是我们接下来要讨论和评估的。</p>
+
+<p>图像分类里用的最多的是SVM，另外也有衡量不同可视特征对于图像分类重要性的多核学习方法（Multiple Kernel Learning，MKL）。源于自然语言处理主题模型(Topic Model)中的LDA（Latent Dirichlet Allocation）和PLSA（Probabilistic Latent Semantic Analysis）模型也可用于图像分类，该类方法主要是通过图像特征的集合得到隐含的图像主题。与朴素贝叶斯方法相比，LDA和PLSA更适合解决大规模数据的问题。</p>
+
+<h2 id="section-1">几种图像表示模型</h2>
+
+<hr />
+<p><img src="../images/Image-Representation-For-Classification/BOW.png" alt="classification-framework" /></p>
+
+<ul>
+  <li><strong><em>BOW:</em></strong><br />
+1.局部特征提取与描述；<br />
+2.构建大规模、区分力强的视词字典；<br />
+3.准确而快速地进行特征向量量化；<br />
+4.计算每幅图像的视词直方图；<br />
+5.使用TF-IDF策略对视词直方图进行加权。  </li>
+</ul>
+
+<hr />
+
+<p><img src="../images/Image-Representation-For-Classification/SPM.png" alt="classification-framework" /></p>
+
+<ul>
+  <li><strong><em>SPM:</em></strong><br />
+1.局部特征提取与描述；<br />
+2.构建大规模、区分力强的视词字典； <br />
+3.准确而快速地进行特征向量量化； <br />
+4.计算每个区域的视词直方图组成空间金字塔。</li>
+</ul>
+
+<p><img src="../images/Image-Representation-For-Classification/3-SPM.png" alt="classification-framework" /><br />
+3层空间金字塔</p>
+
+<hr />
+
+<p><img src="../images/Image-Representation-For-Classification/ScSPM.png" alt="classification-framework" /></p>
+
+<ul>
+  <li><strong><em>ScSPM:</em></strong><br />
+1.局部特征提取与描述；<br />
+2.学习用于稀疏编码的视词字典；<br />
+3.对局部特征进行稀疏编码；<br />
+4.对稀疏编码后的特征利用Pooling方法计算空间金字塔。  </li>
+</ul>
+
+<hr />
+
+<p><img src="../images/Image-Representation-For-Classification/LLC.png" alt="classification-framework" /></p>
+
+<ul>
+  <li><strong><em>LLC:</em></strong><br />
+1.局部特征提取与描述；<br />
+2.学习用于稀疏编码的视词字典；<br />
+3.对局部特征进行局部约束线性编码；<br />
+4.对稀疏编码后的特征利用Pooling方法计算空间金字塔。  </li>
+</ul>
+
+<hr />
+
+<h2 id="section-2">图像表示模型性能评估</h2>
+
+<p>实验数据集共有15类场景，每一类场景包括200+图像，数据集最初来源于<a href="http://www.di.ens.fr/willow/pdfs/cvpr06b.pdf">Lazebnik et al. 2006</a>。</p>
+
+<p>在实验中，为了考察不同的参数对实验结果的影响，对于每种参数设置都进行了实验，每个实验随机选择训练集运行10次，最后取精度平均值。</p>
+
+<hr />
+
+<p>分类器选择线性支持向量机LinearSVM(λ为LinearSVM的则化参数)时的结果：</p>
+
+<p><img src="../images/Image-Representation-For-Classification/LinearSVM-Tr.png" alt="classification-framework" /></p>
+
+<p><img src="../images/Image-Representation-For-Classification/LinearSVM-Dic.png" alt="classification-framework" /></p>
+
+<p><img src="../images/Image-Representation-For-Classification/LinearSVM-lambda.png" alt="classification-framework" /></p>
+
+<hr />
+
+<p>当用非线性SVM(LibSVM库)时，核函数的类型有线性核(Linear)、多项式核(Polynomial)、径向基函数核(RBF)和S型核(Sigmoid)，非线性SVM只对ScSPM方法进行了实验，结果如下：</p>
+
+<p><img src="../images/Image-Representation-For-Classification/Kernel-ScSPM-Tr.png" alt="classification-framework" /></p>
+
+<p><img src="../images/Image-Representation-For-Classification/Kernel-ScSPM-Dic.png" alt="classification-framework" /></p>
+
+<hr />
+
+<p>下面是ScSPM图像表示方法下，每类选100幅图像作为训练，在线性SVM分类时的混淆矩阵(右下角处类别的混淆较大，这主要是这些类的图像本来就比较相似)：</p>
+
+<p><img src="../images/Image-Representation-For-Classification/Confusion-Matrix.png" alt="classification-framework" /></p>
+
+<h2 id="section-3">结论</h2>
+
+<p>在所考察的4中表示模型中，ScSPM的方法分类精度是最高的，但是其时间复杂度也比较大，如果对时间要求比较严格，分类精度适当降低可以接受，那么LLC方法是很好的选择。</p>
+
+<h2 id="section-4">参考文献</h2>
+
+<p>[1]	J. Sivic, A. Zisserman. Video Google: A Text Retrieval Approach to Object Matching in Videos. In ICCV, 2003.<br />
+[2]	S. Lazebnik, C. Schmid, J. Ponce. Beyond Bags of Features: Spatial Pyramid Matching for Recognizing Natural Scene Categories. In CVPR, 2006.<br />
+[3]	J. Yang,  K. Yu,  Y. Gong, et al. Linear Spatial Pyramid Matching Using Sparse Coding for Image Classification[C]. In CVPR,2009.<br />
+[4]	Jinjun Wang, Jianchao Yang,et al.Locality-constrained Linear Coding for Image Classification.in CVPR,2010.  </p>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Yiiwood</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-23T20:31:00+08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/computer-vision/'>Computer Vision</a>, <a class='category' href='/blog/categories/pattern-recognition/'>Pattern Recognition</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/" data-via="" data-counturl="http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/10/23/sparse-lowrank/" title="Previous Post: Compress Sensing">&laquo; Compress Sensing</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/11/23/Image-Representation-For-Classification/">用于分类的几种图像表示模型</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/23/sparse-lowrank/">Compress Sensing</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/20/ensemble-learning/">Ensemble Learning</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/10/01/octopress-blog/">Octopress Blog 配置</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+    <li class='category'><a href='/blog/categories/artificial-intelligence/'>Artificial Intelligence (1)</a></li>
+<li class='category'><a href='/blog/categories/computer-vision/'>Computer Vision (3)</a></li>
+<li class='category'><a href='/blog/categories/data-mining/'>Data Mining (1)</a></li>
+<li class='category'><a href='/blog/categories/information-retrieval/'>Information Retrieval (1)</a></li>
+<li class='category'><a href='/blog/categories/machematics/'>Machematics (1)</a></li>
+<li class='category'><a href='/blog/categories/machine-learning/'>Machine Learning (2)</a></li>
+<li class='category'><a href='/blog/categories/natural-language-processing/'>Natural Language Processing (1)</a></li>
+<li class='category'><a href='/blog/categories/octopress/'>Octopress (1)</a></li>
+<li class='category'><a href='/blog/categories/pattern-recognition/'>Pattern Recognition (3)</a></li>
+<li class='category'><a href='/blog/categories/statistical-learning-theory/'>Statistical Learning Theory (1)</a></li>
+
+  </ul>
+</section>
+
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/yiiwood@gmail.com?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Yiiwood -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'yiiwood';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/';
+        var disqus_url = 'http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
