@@ -146,7 +146,7 @@ ruby dk.rb install 4、安装python。
 <div class="entry-content"><h2 id="section">一、本地环境配置</h2>
 <p>1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。<br />
 2、安装<a href="http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe">Ruby</a>，加入环境变量。<br />
-3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：</p>
+3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -156,26 +156,26 @@ ruby dk.rb install 4、安装python。
 </span><span class="line">ruby dk.rb install</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>4、安装<a href="http://www.activestate.com/activepython/downloads">python</a>。<br />
-5、下载Octopress，执行下面的git命令：  </p>
+5、下载Octopress，执行下面的git命令：   </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">git clone git://github.com/imathis/octopress.git  octopress</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>6、加入中文UTF-8编码支持，Windows环境变量配置如下：</p>
+<p>6、加入中文UTF-8编码支持，Windows环境变量配置如下：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">LANG=zh_CN.UTF-8
 </span><span class="line">LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>7、更新源，执行如下CMD命令：</p>
+<p>7、更新源，执行如下CMD命令：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">gem sources -a http://ruby.taobao.org/
 </span><span class="line">gem sources -r http://rubygems.org/</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>8、安装Octopress，执行CMD命令：</p>
+<p>8、安装Octopress，执行CMD命令：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -192,14 +192,14 @@ ruby dk.rb install 4、安装python。
 
 <h2 id="octopressgithub">三、发布Octopress到Github</h2>
 
-<p>1、执行CMD命令，按照提示输入Repo地址（git@github.com:username/username.github.com）：</p>
+<p>1、执行CMD命令，按照提示输入Repo地址（git@github.com:username/username.github.com）：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">cd octopress
 </span><span class="line">rake setup_github_pages</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>2、发布，git命令（#号后面是注释）：</p>
+<p>2、发布，git命令（#号后面是注释）：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -212,7 +212,7 @@ ruby dk.rb install 4、安装python。
 
 <p>本地预览地址<a href="http://localhost:4000/">http://localhost:4000/</a>。</p>
 
-<p>3、源文件发布到source分支下面，git命令：</p>
+<p>3、源文件发布到source分支下面，git命令：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -227,7 +227,7 @@ ruby dk.rb install 4、安装python。
 
 <p>1、代码块</p>
 
-<p>（1）在每行代码前面空Tab键：</p>
+<p>（1）在每行代码前面空Tab键：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -244,17 +244,15 @@ ruby dk.rb install 4、安装python。
 </span><span class="line">		return 0;
 </span><span class="line">	}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>效果：</p>
+<p>效果：<br />
+	int main()
+	{
+		int i;
+		i = 0;
+		return 0;
+	}</p>
 
-<pre><code>int main()
-{
-	int i;
-	i = 0;
-	return 0;
-}
-</code></pre>
-
-<p>（2）用codeblock和endcodeblock作为代码块的开头和结尾，效果：</p>
+<p>（2）用codeblock和endcodeblock作为代码块的开头和结尾，效果：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -267,7 +265,7 @@ ruby dk.rb install 4、安装python。
 
 <p>2、引用块</p>
 
-<p>代码：</p>
+<p>代码：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -280,27 +278,21 @@ ruby dk.rb install 4、安装python。
 </span><span class="line">&gt;
 </span><span class="line">&gt; Back to the first level.</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>效果：</p>
-
-<blockquote>
-  <p>This is the first level of quoting.</p>
-
-  <blockquote>
-    <p>This is nested blockquote</p>
-  </blockquote>
-
-  <p>Back to the first level.</p>
-</blockquote>
+<p>效果：<br />
+&gt; This is the first level of quoting.
+&gt;
+&gt; &gt; This is nested blockquote
+&gt;
+&gt; Back to the first level.</p>
 
 <h2 id="latex">五、加入Latex支持</h2>
 
-<p>1、首先安装<code>kramdown</code>包：</p>
+<p>1、首先安装<code>kramdown</code>包：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">gem install kramdown</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>再把下面的代码添加到<code>source/_includes/custom/head.html</code>文件中:</p>
-
+<p>再把下面的代码添加到<code>source/_includes/custom/head.html</code>文件中:  </p>
 <div><script src="https://gist.github.com/3938526.js?file=head_add.html"></script>
 <noscript><pre><code>&lt;!-- mathjax config similar to math.stackexchange --&gt;
 
@@ -334,14 +326,14 @@ ruby dk.rb install 4、安装python。
    src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
 &lt;/script&gt;</code></pre></noscript></div>
 
-<p>修改<code>_config.yml</code></p>
+<p>修改<code>_config.yml</code>  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">markdown: kramdown  #rdiscount</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>2、例子</p>
 
-<p>插入代码：</p>
+<p>插入代码：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -376,25 +368,23 @@ ruby dk.rb install 4、安装python。
 </span><span class="line">\end{align*}
 </span><span class="line">$$</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>效果：</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-
-\begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+<p>效果：<br />
+$$
+\begin{align<em>}
+  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = <br />
+  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) <br />
+      \vdots &amp; \ddots &amp; \vdots <br />
+      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
     \end{array} \right)
   \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
+      y_1 <br />
+      \vdots <br />
       y_n
     \end{array} \right)
-\end{align*}
- %]]></script>
+\end{align</em>}
+$$</p>
 
 <p>单行代码：<code>$\exp(-\frac{x^2}{2})$</code>，效果：$\exp(-\frac{x^2}{2})$</p>
 
@@ -467,7 +457,7 @@ ruby dk.rb install 4、安装python。
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/11/23/Image-Representation-For-Classification/">用于分类的几种图像表示模型</a>
+        <a href="/blog/2012/11/23/image-representation-for-classification/">用于分类的几种图像表示模型</a>
       </li>
     
       <li class="post">

@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/">
+  <link rel="canonical" href="http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -140,8 +140,6 @@
 
 <p><img src="../images/Image-Representation-For-Classification/image-classification-framework.png" alt="classification-framework" /></p>
 
-<!-- more -->
-
 <p>通常图像特征分为全局特征和局部特征，全局特征需要在整幅图像中计算，常用的有全局颜色直方图、功率谱、PHOG等；局部特征计算方式和全局特征方法相反，它首先将图像划分成图像块，再对各个小图像块计算其特征表示，常用的局部特征有GIST、SIFT、SURF、MSER 等。在应用中，由于局部特征鲁棒性好、能够应对多种变换等，因此在分类与识别领域扮演着重要角色。</p>
 
 <p>图像表示是指组织图像特征表达整幅图像或图中目标，当用局部特征表示图像时，由于每幅图像会有很多局部特征，这样特征之间的组织关系就变得十分重要，良好的组织关系使得图像表示更具区分性，并且能捕捉图中目标的结构信息，为后续的分类打好基础。当前比较有代表性的方法包括特征袋（BOW）方法和空间金字塔匹配方法。其中空间金字塔匹配方法又包括基本空间金字塔匹配(Spatial Pyramid Matching, SPM)法、稀疏编码空间金字塔匹配(Sparse coding SPM, ScSPM)法和局部性约束线性编码(Locality-constrained Linear Coding, LLC)空间金字塔匹配法。这几类表示模型也是我们接下来要讨论和评估的。</p>
@@ -233,6 +231,8 @@
 
 <p><img src="../images/Image-Representation-For-Classification/Confusion-Matrix.png" alt="classification-framework" /></p>
 
+<!-- more -->
+
 <h2 id="section-3">结论</h2>
 
 <p>在所考察的4中表示模型中，ScSPM的方法分类精度是最高的，但是其时间复杂度也比较大，如果对时间要求比较严格，分类精度适当降低可以接受，那么LLC方法是很好的选择。</p>
@@ -280,7 +280,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/" data-via="" data-counturl="http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification/" data-via="" data-counturl="http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -313,7 +313,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/11/23/Image-Representation-For-Classification/">用于分类的几种图像表示模型</a>
+        <a href="/blog/2012/11/23/image-representation-for-classification/">用于分类的几种图像表示模型</a>
       </li>
     
       <li class="post">
@@ -379,8 +379,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/';
-        var disqus_url = 'http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/';
+        var disqus_identifier = 'http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification/';
+        var disqus_url = 'http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification/';
         var disqus_script = 'embed.js';
       
     (function () {

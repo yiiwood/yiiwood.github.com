@@ -4,7 +4,7 @@
   <title><![CDATA[Yiiwood's Blog]]></title>
   <link href="http://yiiwood.github.com/atom.xml" rel="self"/>
   <link href="http://yiiwood.github.com/"/>
-  <updated>2013-03-07T19:55:07+08:00</updated>
+  <updated>2013-03-07T20:19:51+08:00</updated>
   <id>http://yiiwood.github.com/</id>
   <author>
     <name><![CDATA[Yiiwood]]></name>
@@ -15,15 +15,13 @@
   
   <entry>
     <title type="html"><![CDATA[用于分类的几种图像表示模型]]></title>
-    <link href="http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification/"/>
+    <link href="http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification/"/>
     <updated>2012-11-23T20:31:00+08:00</updated>
-    <id>http://yiiwood.github.com/blog/2012/11/23/Image-Representation-For-Classification</id>
+    <id>http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification</id>
     <content type="html"><![CDATA[<h2 id="section">图像分类的一般框架</h2>
 <p>图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。</p>
 
 <p><img src="../images/Image-Representation-For-Classification/image-classification-framework.png" alt="classification-framework" /></p>
-
-<!-- more -->
 
 <p>通常图像特征分为全局特征和局部特征，全局特征需要在整幅图像中计算，常用的有全局颜色直方图、功率谱、PHOG等；局部特征计算方式和全局特征方法相反，它首先将图像划分成图像块，再对各个小图像块计算其特征表示，常用的局部特征有GIST、SIFT、SURF、MSER 等。在应用中，由于局部特征鲁棒性好、能够应对多种变换等，因此在分类与识别领域扮演着重要角色。</p>
 
@@ -116,6 +114,8 @@
 
 <p><img src="../images/Image-Representation-For-Classification/Confusion-Matrix.png" alt="classification-framework" /></p>
 
+<!-- more -->
+
 <h2 id="section-3">结论</h2>
 
 <p>在所考察的4中表示模型中，ScSPM的方法分类精度是最高的，但是其时间复杂度也比较大，如果对时间要求比较严格，分类精度适当降低可以接受，那么LLC方法是很好的选择。</p>
@@ -171,7 +171,7 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
     <content type="html"><![CDATA[<h2 id="section">一、本地环境配置</h2>
 <p>1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。<br />
 2、安装<a href="http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe">Ruby</a>，加入环境变量。<br />
-3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：</p>
+3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -181,26 +181,26 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 </span><span class="line">ruby dk.rb install</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>4、安装<a href="http://www.activestate.com/activepython/downloads">python</a>。<br />
-5、下载Octopress，执行下面的git命令：  </p>
+5、下载Octopress，执行下面的git命令：   </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">git clone git://github.com/imathis/octopress.git  octopress</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>6、加入中文UTF-8编码支持，Windows环境变量配置如下：</p>
+<p>6、加入中文UTF-8编码支持，Windows环境变量配置如下：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">LANG=zh_CN.UTF-8
 </span><span class="line">LC_ALL=zh_CN.UTF-8</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>7、更新源，执行如下CMD命令：</p>
+<p>7、更新源，执行如下CMD命令：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">gem sources -a http://ruby.taobao.org/
 </span><span class="line">gem sources -r http://rubygems.org/</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>8、安装Octopress，执行CMD命令：</p>
+<p>8、安装Octopress，执行CMD命令：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -217,14 +217,14 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 
 <h2 id="octopressgithub">三、发布Octopress到Github</h2>
 
-<p>1、执行CMD命令，按照提示输入Repo地址（git@github.com:username/username.github.com）：</p>
+<p>1、执行CMD命令，按照提示输入Repo地址（git@github.com:username/username.github.com）：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">cd octopress
 </span><span class="line">rake setup_github_pages</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>2、发布，git命令（#号后面是注释）：</p>
+<p>2、发布，git命令（#号后面是注释）：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -237,7 +237,7 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 
 <p>本地预览地址<a href="http://localhost:4000/">http://localhost:4000/</a>。</p>
 
-<p>3、源文件发布到source分支下面，git命令：</p>
+<p>3、源文件发布到source分支下面，git命令：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -252,7 +252,7 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 
 <p>1、代码块</p>
 
-<p>（1）在每行代码前面空Tab键：</p>
+<p>（1）在每行代码前面空Tab键：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -269,17 +269,15 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 </span><span class="line">		return 0;
 </span><span class="line">	}</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>效果：</p>
+<p>效果：<br />
+	int main()
+	{
+		int i;
+		i = 0;
+		return 0;
+	}</p>
 
-<pre><code>int main()
-{
-	int i;
-	i = 0;
-	return 0;
-}
-</code></pre>
-
-<p>（2）用codeblock和endcodeblock作为代码块的开头和结尾，效果：</p>
+<p>（2）用codeblock和endcodeblock作为代码块的开头和结尾，效果：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -292,7 +290,7 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 
 <p>2、引用块</p>
 
-<p>代码：</p>
+<p>代码：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -305,27 +303,21 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 </span><span class="line">&gt;
 </span><span class="line">&gt; Back to the first level.</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>效果：</p>
-
-<blockquote>
-  <p>This is the first level of quoting.</p>
-
-  <blockquote>
-    <p>This is nested blockquote</p>
-  </blockquote>
-
-  <p>Back to the first level.</p>
-</blockquote>
+<p>效果：<br />
+&gt; This is the first level of quoting.
+&gt;
+&gt; &gt; This is nested blockquote
+&gt;
+&gt; Back to the first level.</p>
 
 <h2 id="latex">五、加入Latex支持</h2>
 
-<p>1、首先安装<code>kramdown</code>包：</p>
+<p>1、首先安装<code>kramdown</code>包：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">gem install kramdown</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>再把下面的代码添加到<code>source/_includes/custom/head.html</code>文件中:</p>
-
+<p>再把下面的代码添加到<code>source/_includes/custom/head.html</code>文件中:  </p>
 <div><script src="https://gist.github.com/3938526.js?file=head_add.html"></script>
 <noscript><pre><code>&lt;!-- mathjax config similar to math.stackexchange --&gt;
 
@@ -359,14 +351,14 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
    src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
 &lt;/script&gt;</code></pre></noscript></div>
 
-<p>修改<code>_config.yml</code></p>
+<p>修改<code>_config.yml</code>  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 </pre></td><td class="code"><pre><code class=""><span class="line">markdown: kramdown  #rdiscount</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>2、例子</p>
 
-<p>插入代码：</p>
+<p>插入代码：  </p>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
 <span class="line-number">2</span>
@@ -401,25 +393,23 @@ Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程�
 </span><span class="line">\end{align*}
 </span><span class="line">$$</span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p>效果：</p>
-
-<script type="math/tex; mode=display">% &lt;![CDATA[
-
-\begin{align*}
-  & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
-  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = \\
-  & (x_1, \ldots, x_n) \left( \begin{array}{ccc}
-      \phi(e_1, e_1) & \cdots & \phi(e_1, e_n) \\
-      \vdots & \ddots & \vdots \\
-      \phi(e_n, e_1) & \cdots & \phi(e_n, e_n)
+<p>效果：<br />
+$$
+\begin{align<em>}
+  &amp; \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)
+  = \sum_{i=1}^n \sum_{j=1}^n x_i y_j \phi(e_i, e_j) = <br />
+  &amp; (x_1, \ldots, x_n) \left( \begin{array}{ccc}
+      \phi(e_1, e_1) &amp; \cdots &amp; \phi(e_1, e_n) <br />
+      \vdots &amp; \ddots &amp; \vdots <br />
+      \phi(e_n, e_1) &amp; \cdots &amp; \phi(e_n, e_n)
     \end{array} \right)
   \left( \begin{array}{c}
-      y_1 \\
-      \vdots \\
+      y_1 <br />
+      \vdots <br />
       y_n
     \end{array} \right)
-\end{align*}
- %]]&gt;</script>
+\end{align</em>}
+$$</p>
 
 <p>单行代码：<code>$\exp(-\frac{x^2}{2})$</code>，效果：$\exp(-\frac{x^2}{2})$</p>
 
