@@ -8,8 +8,7 @@ categories: [ Octopress ]
 ##一、本地环境配置##
 1、安装[Git](http://code.google.com/p/msysgit/downloads/list)。  
 2、安装[Ruby](http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe)，加入环境变量。  
-3、安装[Devkit](https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe)，首先解压，然后用如下CMD命令安装：
-  
+3、安装[Devkit](https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe)，首先解压，然后用如下CMD命令安装：  
 {% codeblock %}
 cd DevKit
 ruby dk.rb init
@@ -17,28 +16,24 @@ ruby dk.rb install
 {% endcodeblock %}  
 
 4、安装[python](http://www.activestate.com/activepython/downloads)。  
-5、下载Octopress，执行下面的git命令：  
-
+5、下载Octopress，执行下面的git命令：   
 {% codeblock %}
 git clone git://github.com/imathis/octopress.git  octopress
 {% endcodeblock %}
 
-6、加入中文UTF-8编码支持，Windows环境变量配置如下：
-
+6、加入中文UTF-8编码支持，Windows环境变量配置如下：  
 {% codeblock %}
 LANG=zh_CN.UTF-8
 LC_ALL=zh_CN.UTF-8
 {% endcodeblock %}
 
-7、更新源，执行如下CMD命令：
-
+7、更新源，执行如下CMD命令：  
 {% codeblock %}
 gem sources -a http://ruby.taobao.org/
 gem sources -r http://rubygems.org/
 {% endcodeblock %}
 
-8、安装Octopress，执行CMD命令：
-
+8、安装Octopress，执行CMD命令：  
 {% codeblock %}
 cd octopress
 gem install bundler
@@ -53,15 +48,13 @@ bundle install
 
 ##三、发布Octopress到Github##
 
-1、执行CMD命令，按照提示输入Repo地址（git@github.com:username/username.github.com）：
-
+1、执行CMD命令，按照提示输入Repo地址（git@github.com:username/username.github.com）：  
 {% codeblock %}
 cd octopress
 rake setup_github_pages
 {% endcodeblock %}
 
-2、发布，git命令（#号后面是注释）：
-
+2、发布，git命令（#号后面是注释）：  
 {% codeblock %}
 rake install      #安装主题
 rake generate     #生成静态页面
@@ -71,8 +64,7 @@ rake deploy       #发布到Github
 
 本地预览地址[http://localhost:4000/](http://localhost:4000/)。
 
-3、源文件发布到source分支下面，git命令：
-
+3、源文件发布到source分支下面，git命令：  
 {% codeblock %}
 git add .
 git commit -m “your message”
@@ -85,8 +77,7 @@ git push origin source
 
 1、代码块
 
-（1）在每行代码前面空Tab键：
-
+（1）在每行代码前面空Tab键：  
 {% codeblock %}
 /*每行前空Tab*/
 	int main()
@@ -97,8 +88,7 @@ git push origin source
 	}
 {% endcodeblock %}
 
-效果：
-
+效果：  
 	int main()
 	{
 		int i;
@@ -106,8 +96,7 @@ git push origin source
 		return 0;
 	}
 
-（2）用codeblock和endcodeblock作为代码块的开头和结尾，效果：
-
+（2）用codeblock和endcodeblock作为代码块的开头和结尾，效果：  
 {% codeblock %}
 int main()
 {
@@ -117,8 +106,7 @@ int main()
 
 2、引用块
 
-代码：
-
+代码：  
 {% codeblock %}
 > This is the first level of quoting.
 >
@@ -127,8 +115,7 @@ int main()
 > Back to the first level.
 {% endcodeblock %}
 
-效果：
-
+效果：  
 > This is the first level of quoting.
 >
 > > This is nested blockquote
@@ -137,26 +124,22 @@ int main()
 
 ##五、加入Latex支持##
 
-1、首先安装`kramdown`包：
-
+1、首先安装`kramdown`包：  
 {% codeblock %}
 gem install kramdown
 {% endcodeblock %}
 
-再把下面的代码添加到`source/_includes/custom/head.html`文件中:
-
+再把下面的代码添加到`source/_includes/custom/head.html`文件中:  
 {% gist 3938526   head_add.html %}
 
-修改`_config.yml`
-
+修改`_config.yml`  
 {% codeblock %}
 markdown: kramdown  #rdiscount
 {% endcodeblock %}
 
 2、例子
 
-插入代码：
-
+插入代码：  
 {% codeblock %}
 $$
 \begin{align*}
@@ -176,8 +159,7 @@ $$
 $$
 {% endcodeblock %}
 
-效果：
-
+效果：  
 $$
 \begin{align*}
   & \phi(x,y) = \phi \left(\sum_{i=1}^n x_ie_i, \sum_{j=1}^n y_je_j \right)

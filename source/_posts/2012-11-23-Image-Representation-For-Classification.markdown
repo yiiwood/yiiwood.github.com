@@ -11,7 +11,7 @@ categories: [ Pattern Recognition,Computer Vision]
 
 ![classification-framework](../images/Image-Representation-For-Classification/image-classification-framework.png)
 
-<!-- more -->
+
 
 通常图像特征分为全局特征和局部特征，全局特征需要在整幅图像中计算，常用的有全局颜色直方图、功率谱、PHOG等；局部特征计算方式和全局特征方法相反，它首先将图像划分成图像块，再对各个小图像块计算其特征表示，常用的局部特征有GIST、SIFT、SURF、MSER 等。在应用中，由于局部特征鲁棒性好、能够应对多种变换等，因此在分类与识别领域扮演着重要角色。
 
@@ -97,6 +97,8 @@ categories: [ Pattern Recognition,Computer Vision]
 下面是ScSPM图像表示方法下，每类选100幅图像作为训练，在线性SVM分类时的混淆矩阵(右下角处类别的混淆较大，这主要是这些类的图像本来就比较相似)：
 
 ![classification-framework](../images/Image-Representation-For-Classification/Confusion-Matrix.png)
+
+<!-- more -->
 
 ## 结论 ##
 
