@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Compress Sensing"
-date: 2012-10-23 18:54
+date: 2012-11-04 21:54
 comments: true
 categories: [ Machine Learning,Pattern Recognition,Computer Vision]
 ---

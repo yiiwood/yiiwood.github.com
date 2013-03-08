@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "用于分类的几种图像表示模型"
-date: 2012-11-08 11:35
+date: 2012-11-25 21:35
 comments: true
 categories:  [ Pattern Recognition,Computer Vision]
 ---
@@ -18,7 +18,6 @@ categories:  [ Pattern Recognition,Computer Vision]
 
 图像分类里用的最多的是SVM，另外也有衡量不同可视特征对于图像分类重要性的多核学习方法（Multiple Kernel Learning，MKL）。源于自然语言处理主题模型(Topic Model)中的LDA（Latent Dirichlet Allocation）和PLSA（Probabilistic Latent Semantic Analysis）模型也可用于图像分类，该类方法主要是通过图像特征的集合得到隐含的图像主题。与朴素贝叶斯方法相比，LDA和PLSA更适合解决大规模数据的问题。
 
-<!-- more -->
 
 ## 几种图像表示模型 ##
 
@@ -108,6 +107,7 @@ categories:  [ Pattern Recognition,Computer Vision]
 
 在所考察的4中表示模型中，ScSPM的方法分类精度是最高的，但是其时间复杂度也比较大，如果对时间要求比较严格，分类精度适当降低可以接受，那么LLC方法是很好的选择。
 
+<!-- more -->
 
 ## 参考文献 ##
 

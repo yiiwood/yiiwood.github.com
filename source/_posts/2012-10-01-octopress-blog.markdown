@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Octopress Blog 配置"
-date: 2012-10-01 19:32
+date: 2012-10-01 20:32
 comments: true
 categories: [ Octopress ]
 ---

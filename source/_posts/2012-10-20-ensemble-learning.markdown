@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ensemble Learning"
-date: 2012-10-20 19:33
+date: 2012-10-20 21:33
 comments: true
 latex: true
 categories: [ Machematics,Artificial Intelligence,Statistical Learning Theory,Machine Learning,Pattern Recognition,Computer Vision,Data Mining,Natural Language Processing,Information Retrieval ]
