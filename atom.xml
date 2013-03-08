@@ -4,7 +4,7 @@
   <title><![CDATA[Yiiwood's Blog]]></title>
   <link href="http://yiiwood.github.com/atom.xml" rel="self"/>
   <link href="http://yiiwood.github.com/"/>
-  <updated>2013-03-08T11:30:09+08:00</updated>
+  <updated>2013-03-08T11:38:27+08:00</updated>
   <id>http://yiiwood.github.com/</id>
   <author>
     <name><![CDATA[Yiiwood]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[用于分类的几种图像表示模型]]></title>
-    <link href="http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification/"/>
-    <updated>2012-11-23T20:31:00+08:00</updated>
-    <id>http://yiiwood.github.com/blog/2012/11/23/image-representation-for-classification</id>
+    <link href="http://yiiwood.github.com/blog/2012/11/08/image-representation-for-classification/"/>
+    <updated>2012-11-08T11:35:00+08:00</updated>
+    <id>http://yiiwood.github.com/blog/2012/11/08/image-representation-for-classification</id>
     <content type="html"><![CDATA[<h2 id="section">图像分类的一般框架</h2>
 <p>图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。</p>
 
