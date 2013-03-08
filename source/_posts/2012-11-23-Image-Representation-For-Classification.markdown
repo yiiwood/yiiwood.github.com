@@ -6,9 +6,8 @@ comments: true
 categories: [ Pattern Recognition,Computer Vision]
 ---
 
-----------
-
 ## 图像分类的一般框架 ##
+
 图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。
 
 ![classification-framework](../images/Image-Representation-For-Classification/image-classification-framework.png)
@@ -20,7 +19,7 @@ categories: [ Pattern Recognition,Computer Vision]
 
 图像分类里用的最多的是SVM，另外也有衡量不同可视特征对于图像分类重要性的多核学习方法（Multiple Kernel Learning，MKL）。源于自然语言处理主题模型(Topic Model)中的LDA（Latent Dirichlet Allocation）和PLSA（Probabilistic Latent Semantic Analysis）模型也可用于图像分类，该类方法主要是通过图像特征的集合得到隐含的图像主题。与朴素贝叶斯方法相比，LDA和PLSA更适合解决大规模数据的问题。
 
-
+<!-- more -->
 
 ## 几种图像表示模型 ##
 
@@ -105,7 +104,6 @@ categories: [ Pattern Recognition,Computer Vision]
 
 ![classification-framework](../images/Image-Representation-For-Classification/Confusion-Matrix.png)
 
-<!-- more -->
 
 ## 结论 ##
 
