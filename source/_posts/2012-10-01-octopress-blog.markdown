@@ -5,8 +5,8 @@ date: 2012-10-01 19:32
 comments: true
 categories: [ Octopress ]
 ---
-##一、本地环境配置##
 
+##一、本地环境配置##
 1、安装[Git](http://code.google.com/p/msysgit/downloads/list)。  
 2、安装[Ruby](http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe)，加入环境变量。  
 3、安装[Devkit](https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe)，首先解压，然后用如下CMD命令安装：  
