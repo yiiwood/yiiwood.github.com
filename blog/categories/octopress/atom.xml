@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | Yiiwood's Blog]]></title>
   <link href="http://yiiwood.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://yiiwood.github.com/"/>
-  <updated>2013-03-07T20:48:54+08:00</updated>
+  <updated>2013-03-08T11:18:38+08:00</updated>
   <id>http://yiiwood.github.com/</id>
   <author>
     <name><![CDATA[Yiiwood]]></name>
@@ -18,9 +18,9 @@
     <link href="http://yiiwood.github.com/blog/2012/10/01/octopress-blog/"/>
     <updated>2012-10-01T19:32:00+08:00</updated>
     <id>http://yiiwood.github.com/blog/2012/10/01/octopress-blog</id>
-    <content type="html"><![CDATA[<hr />
-<p>##一、本地环境配置##
-1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。<br />
+    <content type="html"><![CDATA[<h2 id="section">一、本地环境配置</h2>
+
+<p>1、安装<a href="http://code.google.com/p/msysgit/downloads/list">Git</a>。<br />
 2、安装<a href="http://rubyforge.org/frs/download.php/75127/rubyinstaller-1.9.2-p290.exe">Ruby</a>，加入环境变量。<br />
 3、安装<a href="https://github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe">Devkit</a>，首先解压，然后用如下CMD命令安装：  </p>
 
