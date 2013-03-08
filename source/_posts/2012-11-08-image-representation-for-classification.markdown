@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "用于分类的几种图像表示模型"
-date: 2012-11-23 20:31
+date: 2012-11-08 11:35
 comments: true
-categories: [ Pattern Recognition,Computer Vision]
+categories:  [ Pattern Recognition,Computer Vision]
 ---
 
 ## 图像分类的一般框架 ##
