@@ -5,7 +5,6 @@ date: 2012-10-01 19:32
 comments: true
 categories: [ Octopress ]
 ---
-
 ##一、本地环境配置##
 
 1、安装[Git](http://code.google.com/p/msysgit/downloads/list)。  

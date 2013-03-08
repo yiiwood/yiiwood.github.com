@@ -5,7 +5,6 @@ date: 2012-11-23 20:31
 comments: true
 categories: [ Pattern Recognition,Computer Vision]
 ---
-
 ## 图像分类的一般框架 ##
 
 图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。

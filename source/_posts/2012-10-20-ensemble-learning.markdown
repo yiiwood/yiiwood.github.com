@@ -6,7 +6,6 @@ comments: true
 latex: true
 categories: [ Machematics,Artificial Intelligence,Statistical Learning Theory,Machine Learning,Pattern Recognition,Computer Vision,Data Mining,Natural Language Processing,Information Retrieval ]
 ---
-
 ##Introduction##
 
 集成学习(Ensemble Learning)思想起源于Valiant提出的PAC( Probably Approximately Correct)学习模型。Valiant和Kearns提出了弱学习和强学习的概念,识别错误率小于1/2,也即准确率仅比随机猜测略高的学习算法称为弱学习算法;识别准确率很高并能在多项式时间内完成的学习算法称为强学习算法。同时,Valiant和Kearns首次提出了PAC学习模型中弱学习算法和强学习算法的等价性问题,即任意给定仅比随机猜测略好的弱学习算法,是否可以将其提升为强学习算法?如果二者等价,那么只需找到一个比随机猜测略好的弱学习算法就可以将其提升为强学习算法,而不必寻找很难获得的强学习算法。
@@ -20,33 +19,5 @@ Bagging是Breiman提出的与Boosting相似的技术。Bagging技术的主要思
 Bagging(Bootstrap Aggregating)与Boosting的区别在于Bagging的训练集的选择是随机的，各轮训练集之间相互独立，而Boosting的训练集的选择不是独立的，各轮训练集的选择与前面各轮的学习结果有关；Bagging的各个预测函数没有权重，而Boosting是有权重的；Bagging的各个预测函数可以并行生成，而Boosting的各个预测函数只能顺序生成。对于象神经网络这样极为耗时的学习方法，Bagging可通过并行训练节省大量时间开销。
 Bagging对于噪声容忍程度比较好，而Boosting似乎对噪声容忍程度不高。
 
-$$
-\begin{algorithm}[H]
-\renewcommand{\thealgorithm}{2.1}
-\caption{The Pseudocode of Adaboost}\label{alg:alg1}
-\KwIn{\mathcal{S}=\left(  \left(x_1, y_1\right),\ldots, \left(x_n, y_n\right) \right)}
-\KwOut{Strong Classifier H}
-	\BlankLine
-	\For{$i = 1$ \KwTo $n$}{
-		$D_1(i) \ = \ \frac{1}{n}$
-	}
-	\For{$t = 1$ \KwTo $T$}{
-		
-		$h_t$ \ = \ base classifier in $\mathcal{H}$ with small error $ \epsilon_t = Pr_{i \sim D_t } \left[ h_t(x_i) \neq y_i \right]$
-			
-		$\alpha_t$ \ = \ $\frac{1}{2} \log \frac{1 - \epsilon_t}{ \epsilon_t } $
-		
-		$Z_t$ \ = \ 2 $\left[ \epsilon_t(1 - \epsilon_t) \right]$  normalization factor
-		
-		\For{$ i = 1$ \KwTo $n$} {
-		
-			$D_{t+1}(i)$ \ = \ $\frac{D_t(i)\exp( -\alpha_t y_i h_t(x_i)  )}{Z_t}$
-		}
-		
-	}
-	\Return $H \ = \ sign(\sum_{t=1}^T \alpha_t h_t ) $
-	
-\end{algorithm}
-$$
 
 
