@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Computer Vision | Yiiwood's Blog]]></title>
   <link href="http://yiiwood.github.com/blog/categories/computer-vision/atom.xml" rel="self"/>
   <link href="http://yiiwood.github.com/"/>
-  <updated>2013-03-08T11:38:27+08:00</updated>
+  <updated>2013-03-08T13:42:28+08:00</updated>
   <id>http://yiiwood.github.com/</id>
   <author>
     <name><![CDATA[Yiiwood]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[用于分类的几种图像表示模型]]></title>
-    <link href="http://yiiwood.github.com/blog/2012/11/08/image-representation-for-classification/"/>
-    <updated>2012-11-08T11:35:00+08:00</updated>
-    <id>http://yiiwood.github.com/blog/2012/11/08/image-representation-for-classification</id>
+    <link href="http://yiiwood.github.com/blog/2012/11/25/image-representation-for-classification/"/>
+    <updated>2012-11-25T21:35:00+08:00</updated>
+    <id>http://yiiwood.github.com/blog/2012/11/25/image-representation-for-classification</id>
     <content type="html"><![CDATA[<h2 id="section">图像分类的一般框架</h2>
 <p>图像分类是涉及计算机视觉、机器学习、模式识别等领域的一项交叉研究，具有广阔的应用前景。一般框架如下图所示，包括图像特征提取、图像特征编码与表示、图像分类与检索。</p>
 
@@ -28,8 +28,6 @@
 <p>图像表示是指组织图像特征表达整幅图像或图中目标，当用局部特征表示图像时，由于每幅图像会有很多局部特征，这样特征之间的组织关系就变得十分重要，良好的组织关系使得图像表示更具区分性，并且能捕捉图中目标的结构信息，为后续的分类打好基础。当前比较有代表性的方法包括特征袋（BOW）方法和空间金字塔匹配方法。其中空间金字塔匹配方法又包括基本空间金字塔匹配(Spatial Pyramid Matching, SPM)法、稀疏编码空间金字塔匹配(Sparse coding SPM, ScSPM)法和局部性约束线性编码(Locality-constrained Linear Coding, LLC)空间金字塔匹配法。这几类表示模型也是我们接下来要讨论和评估的。</p>
 
 <p>图像分类里用的最多的是SVM，另外也有衡量不同可视特征对于图像分类重要性的多核学习方法（Multiple Kernel Learning，MKL）。源于自然语言处理主题模型(Topic Model)中的LDA（Latent Dirichlet Allocation）和PLSA（Probabilistic Latent Semantic Analysis）模型也可用于图像分类，该类方法主要是通过图像特征的集合得到隐含的图像主题。与朴素贝叶斯方法相比，LDA和PLSA更适合解决大规模数据的问题。</p>
-
-<!-- more -->
 
 <h2 id="section-1">几种图像表示模型</h2>
 
@@ -126,6 +124,8 @@
 
 <p>在所考察的4中表示模型中，ScSPM的方法分类精度是最高的，但是其时间复杂度也比较大，如果对时间要求比较严格，分类精度适当降低可以接受，那么LLC方法是很好的选择。</p>
 
+<!-- more -->
+
 <h2 id="section-4">参考文献</h2>
 
 <p>[1]	J. Sivic, A. Zisserman. Video Google: A Text Retrieval Approach to Object Matching in Videos. In ICCV, 2003.<br />
@@ -138,9 +138,9 @@
   
   <entry>
     <title type="html"><![CDATA[Compress Sensing]]></title>
-    <link href="http://yiiwood.github.com/blog/2012/10/23/sparse-lowrank/"/>
-    <updated>2012-10-23T18:54:00+08:00</updated>
-    <id>http://yiiwood.github.com/blog/2012/10/23/sparse-lowrank</id>
+    <link href="http://yiiwood.github.com/blog/2012/11/04/compress-sensing/"/>
+    <updated>2012-11-04T21:54:00+08:00</updated>
+    <id>http://yiiwood.github.com/blog/2012/11/04/compress-sensing</id>
     <content type="html"><![CDATA[<h2 id="section">还没写，先放这</h2>
 <p>我摘抄总结的
 <a href="/images/Sparse Model for Data.pdf">Sparse Model for Data</a></p>
@@ -151,7 +151,7 @@
   <entry>
     <title type="html"><![CDATA[Ensemble Learning]]></title>
     <link href="http://yiiwood.github.com/blog/2012/10/20/ensemble-learning/"/>
-    <updated>2012-10-20T19:33:00+08:00</updated>
+    <updated>2012-10-20T21:33:00+08:00</updated>
     <id>http://yiiwood.github.com/blog/2012/10/20/ensemble-learning</id>
     <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
 <p>集成学习(Ensemble Learning)思想起源于Valiant提出的PAC( Probably Approximately Correct)学习模型。Valiant和Kearns提出了弱学习和强学习的概念,识别错误率小于1/2,也即准确率仅比随机猜测略高的学习算法称为弱学习算法;识别准确率很高并能在多项式时间内完成的学习算法称为强学习算法。同时,Valiant和Kearns首次提出了PAC学习模型中弱学习算法和强学习算法的等价性问题,即任意给定仅比随机猜测略好的弱学习算法,是否可以将其提升为强学习算法?如果二者等价,那么只需找到一个比随机猜测略好的弱学习算法就可以将其提升为强学习算法,而不必寻找很难获得的强学习算法。</p>

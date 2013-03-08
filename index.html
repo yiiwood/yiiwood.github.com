@@ -113,7 +113,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/11/08/image-representation-for-classification/">用于分类的几种图像表示模型</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/11/25/image-representation-for-classification/">用于分类的几种图像表示模型</a></h1>
     
     
       <p class="meta">
@@ -129,9 +129,9 @@
   
 
 
-<time datetime="2012-11-08T11:35:00+08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2012</time>
+<time datetime="2012-11-25T21:35:00+08:00" pubdate data-updated="true">Nov 25<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/11/08/image-representation-for-classification/#disqus_thread">Comments</a>
+         | <a href="/blog/2012/11/25/image-representation-for-classification/#disqus_thread">Comments</a>
         
       </p>
     
@@ -149,11 +149,106 @@
 
 <p>图像分类里用的最多的是SVM，另外也有衡量不同可视特征对于图像分类重要性的多核学习方法（Multiple Kernel Learning，MKL）。源于自然语言处理主题模型(Topic Model)中的LDA（Latent Dirichlet Allocation）和PLSA（Probabilistic Latent Semantic Analysis）模型也可用于图像分类，该类方法主要是通过图像特征的集合得到隐含的图像主题。与朴素贝叶斯方法相比，LDA和PLSA更适合解决大规模数据的问题。</p>
 
+<h2 id="section-1">几种图像表示模型</h2>
+
+<hr />
+<p><img src="../images/Image-Representation-For-Classification/BOW.png" alt="classification-framework" /></p>
+
+<ul>
+  <li><strong><em>BOW:</em></strong><br />
+1.局部特征提取与描述；<br />
+2.构建大规模、区分力强的视词字典；<br />
+3.准确而快速地进行特征向量量化；<br />
+4.计算每幅图像的视词直方图；<br />
+5.使用TF-IDF策略对视词直方图进行加权。  </li>
+</ul>
+
+<hr />
+
+<p><img src="../images/Image-Representation-For-Classification/SPM.png" alt="classification-framework" /></p>
+
+<ul>
+  <li><strong><em>SPM:</em></strong><br />
+1.局部特征提取与描述；<br />
+2.构建大规模、区分力强的视词字典； <br />
+3.准确而快速地进行特征向量量化； <br />
+4.计算每个区域的视词直方图组成空间金字塔。</li>
+</ul>
+
+<p><img src="../images/Image-Representation-For-Classification/3-SPM.png" alt="classification-framework" /><br />
+3层空间金字塔</p>
+
+<hr />
+
+<p><img src="../images/Image-Representation-For-Classification/ScSPM.png" alt="classification-framework" /></p>
+
+<ul>
+  <li><strong><em>ScSPM:</em></strong><br />
+1.局部特征提取与描述；<br />
+2.学习用于稀疏编码的视词字典；<br />
+3.对局部特征进行稀疏编码；<br />
+4.对稀疏编码后的特征利用Pooling方法计算空间金字塔。  </li>
+</ul>
+
+<hr />
+
+<p><img src="../images/Image-Representation-For-Classification/LLC.png" alt="classification-framework" /></p>
+
+<ul>
+  <li><strong><em>LLC:</em></strong><br />
+1.局部特征提取与描述；<br />
+2.学习用于稀疏编码的视词字典；<br />
+3.对局部特征进行局部约束线性编码；<br />
+4.对稀疏编码后的特征利用Pooling方法计算空间金字塔。  </li>
+</ul>
+
+<hr />
+
+<h2 id="section-2">图像表示模型性能评估</h2>
+
+<p>实验数据集共有15类场景，每一类场景包括200+图像，数据集最初来源于<a href="http://www.di.ens.fr/willow/pdfs/cvpr06b.pdf">Lazebnik et al. 2006</a>。</p>
+
+<p>在实验中，为了考察不同的参数对实验结果的影响，对于每种参数设置都进行了实验，每个实验随机选择训练集运行10次，最后取精度平均值。</p>
+
+<hr />
+
+<p>分类器选择线性支持向量机LinearSVM(λ为LinearSVM的则化参数)时的结果：</p>
+
+<p><img src="../images/Image-Representation-For-Classification/LinearSVM-Tr.png" alt="classification-framework" /></p>
+
+<p><img src="../images/Image-Representation-For-Classification/LinearSVM-Dic.png" alt="classification-framework" /></p>
+
+<p><img src="../images/Image-Representation-For-Classification/LinearSVM-lambda.png" alt="classification-framework" /></p>
+
+<hr />
+
+<p>当用非线性SVM(LibSVM库)时，核函数的类型有线性核(Linear)、多项式核(Polynomial)、径向基函数核(RBF)和S型核(Sigmoid)，分别为：<br />
+*  Linear：$u \times v $
+*  Polynomial：$(gamma \times u \times v)^{degree} $
+*  RBF：$\exp^{( -gamma \times \abs{u-v}^{2})} $
+*  Sigmoid：$tanh(gamma \times u \times v + coef) $</p>
+
+<p>非线性SVM只对ScSPM方法进行了实验，结果如下：</p>
+
+<p><img src="../images/Image-Representation-For-Classification/Kernel-ScSPM-Tr.png" alt="classification-framework" /></p>
+
+<p><img src="../images/Image-Representation-For-Classification/Kernel-ScSPM-Dic.png" alt="classification-framework" /></p>
+
+<hr />
+
+<p>下面是ScSPM图像表示方法下，每类选100幅图像作为训练，在线性SVM分类时的混淆矩阵(右下角处类别的混淆较大，这主要是这些类的图像本来就比较相似)：</p>
+
+<p><img src="../images/Image-Representation-For-Classification/Confusion-Matrix.png" alt="classification-framework" /></p>
+
+<h2 id="section-3">结论</h2>
+
+<p>在所考察的4中表示模型中，ScSPM的方法分类精度是最高的，但是其时间复杂度也比较大，如果对时间要求比较严格，分类精度适当降低可以接受，那么LLC方法是很好的选择。</p>
+
 </div>
   
   
     <footer>
-      <a rel="full-article" href="/blog/2012/11/08/image-representation-for-classification/">Read on &rarr;</a>
+      <a rel="full-article" href="/blog/2012/11/25/image-representation-for-classification/">Read on &rarr;</a>
     </footer>
   
 
@@ -165,7 +260,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2012/10/23/sparse-lowrank/">Compress Sensing</a></h1>
+      <h1 class="entry-title"><a href="/blog/2012/11/04/compress-sensing/">Compress Sensing</a></h1>
     
     
       <p class="meta">
@@ -181,9 +276,9 @@
   
 
 
-<time datetime="2012-10-23T18:54:00+08:00" pubdate data-updated="true">Oct 23<span>rd</span>, 2012</time>
+<time datetime="2012-11-04T21:54:00+08:00" pubdate data-updated="true">Nov 4<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/10/23/sparse-lowrank/#disqus_thread">Comments</a>
+         | <a href="/blog/2012/11/04/compress-sensing/#disqus_thread">Comments</a>
         
       </p>
     
@@ -222,7 +317,7 @@
   
 
 
-<time datetime="2012-10-20T19:33:00+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2012</time>
+<time datetime="2012-10-20T21:33:00+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2012</time>
         
          | <a href="/blog/2012/10/20/ensemble-learning/#disqus_thread">Comments</a>
         
@@ -266,7 +361,7 @@
   
 
 
-<time datetime="2012-10-01T19:32:00+08:00" pubdate data-updated="true">Oct 1<span>st</span>, 2012</time>
+<time datetime="2012-10-01T20:32:00+08:00" pubdate data-updated="true">Oct 1<span>st</span>, 2012</time>
         
          | <a href="/blog/2012/10/01/octopress-blog/#disqus_thread">Comments</a>
         
@@ -340,11 +435,11 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/11/08/image-representation-for-classification/">用于分类的几种图像表示模型</a>
+        <a href="/blog/2012/11/25/image-representation-for-classification/">用于分类的几种图像表示模型</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/10/23/sparse-lowrank/">Compress Sensing</a>
+        <a href="/blog/2012/11/04/compress-sensing/">Compress Sensing</a>
       </li>
     
       <li class="post">
